@@ -1,0 +1,61 @@
+// Static Brand Tokens
+$primary-color: #D9232E; // Red
+$primary-hover: #b81c25;
+$font-sans: 'Spoqa Han Sans Neo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Layout & Dimensions
+$min-width: 1000px;
+$container-max-width: 1100px;
+$border-radius-sm: 8px;
+$border-radius-md: 16px;
+$border-radius-lg: 32px;
+
+// Transitions
+$transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+$transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+// CSS Custom Properties for Light Mode (Default)
+:root {
+  --bg-color: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f3f5;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #868e96;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(248, 249, 250, 0.8);
+  --side-nav-bg: rgba(255, 255, 255, 0.6);
+  --nav-dot-color: rgba(0, 0, 0, 0.2);
+  --tooltip-bg: rgba(255, 255, 255, 0.95);
+  --card-flip-back-bg: #e9ecef;
+}
+
+// CSS Custom Properties for Dark Mode
+body.dark-mode {
+  --bg-color: #141414;
+  --bg-card: #1e1e1e;
+  --bg-card-hover: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666666;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --header-bg: rgba(20, 20, 20, 0.8);
+  --side-nav-bg: rgba(30, 30, 30, 0.45);
+  --nav-dot-color: rgba(255, 255, 255, 0.3);
+  --tooltip-bg: rgba(20, 20, 20, 0.95);
+  --card-flip-bg: #1e1e1e;
+  --card-flip-back-bg: #2d2d2d;
+}
+
+// Map CSS Variables back to SCSS variables for system compatibility
+$bg-color: var(--bg-color);
+$bg-card: var(--bg-card);
+$bg-card-hover: var(--bg-card-hover);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted: var(--text-muted);
+$border-color: var(--border-color);
+$shadow-color: var(--shadow-color);

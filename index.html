@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1000, initial-scale=1.0">
+  <title>UI/UX 디자이너, 무슨 일을 할까?</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Compiled CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- Top Global Header -->
+  <header class="top-header">
+    <div class="logo">
+      <img src="images/blackcrown_logo.svg" alt="Blackcrown Logo" class="header-logo-img">
+      <span>UI/UX JOB LECTURE</span>
+    </div>
+    <div class="theme-toggle-area">
+      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="테마 전환">
+        <i class="fa-solid fa-sun icon-light"></i>
+        <i class="fa-solid fa-moon icon-dark"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Side Indicator Navigation -->
+  <nav class="side-nav">
+    <div class="nav-dot active" data-slide="0"><span class="nav-tooltip">0. 표지</span></div>
+    <div class="nav-dot" data-slide="1"><span class="nav-tooltip">1. 아침 질문</span></div>
+    <div class="nav-dot" data-slide="2"><span class="nav-tooltip">2. 사용성 질문</span></div>
+    <div class="nav-dot" data-slide="3"><span class="nav-tooltip">3. 다양한 디바이스</span></div>
+    <div class="nav-dot" data-slide="4"><span class="nav-tooltip">4. UI vs UX 차이점</span></div>
+    <div class="nav-dot" data-slide="5"><span class="nav-tooltip">5. UI 고려사항</span></div>
+    <div class="nav-dot" data-slide="6"><span class="nav-tooltip">6. UX 5단계</span></div>
+    <div class="nav-dot" data-slide="7"><span class="nav-tooltip">7. UX의 좋고 나쁨</span></div>
+    <div class="nav-dot" data-slide="8"><span class="nav-tooltip">8. 문제해결 모델</span></div>
+    <div class="nav-dot" data-slide="9"><span class="nav-tooltip">9. 서비스 탄생 단계</span></div>
+    <div class="nav-dot" data-slide="10"><span class="nav-tooltip">10. UXUI vs PD</span></div>
+    <div class="nav-dot" data-slide="11"><span class="nav-tooltip">11. 필요한 역량</span></div>
+    <div class="nav-dot" data-slide="12"><span class="nav-tooltip">12. 전공과 준비</span></div>
+    <div class="nav-dot" data-slide="13"><span class="nav-tooltip">13. 연봉과 현실</span></div>
+    <div class="nav-dot" data-slide="14"><span class="nav-tooltip">14. 질의응답 Q&A</span></div>
+    <div class="nav-dot" data-slide="15"><span class="nav-tooltip">15. 맺음말</span></div>
+  </nav>
+
+  <!-- Main Presentation Container -->
+  <main class="presentation-container">
+
+    <!-- 0. Cover Slide -->
+    <section class="slide" id="slide-0">
+      <div class="slide-content">
+        <div class="hero-wrapper">
+          <div class="hero-text animate-on-scroll">
+            <span class="tag">Career Talk</span>
+            <h1>UI/UX 디자이너,<br><span>무슨 일을 할까?</span></h1>
+            <p class="subtitle">화면 너머에서 사람의 마음을 설계하는 일</p>
+            <p class="subtitle">한봄고등학교 시각디자인과 학생들을 위한 UI/UX 직업 이야기</p>
+            <div class="presenter-info">
+              <span><i class="fa-solid fa-user"></i> 발표자: <strong>남은정 디자이너</strong></span>
+              <span><i class="fa-solid fa-briefcase"></i> 블랙크라운 디자인 스튜디오 대표 &middot; 프로덕트 디자이너</span>
+            </div>
+          </div>
+          <div class="hero-visual animate-on-scroll">
+            <div class="perspective-card" id="hero-card">
+              <div class="card-character-box">
+                <img src="images/irangi_smile.svg" alt="Smile Irangi" class="card-character-img">
+              </div>
+              <h3 class="card-title">디자인 스튜디오</h3>
+              <p class="card-desc">블랙크라운 스튜디오 대표</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down">
+        <span>스크롤하여 시작하기</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- 1. Icebreaking 1 Slide -->
+    <section class="slide" id="slide-1">
+      <div class="slide-content">
+        <h1 class="section-title">아이스브레이킹 <span>하나</span></h1>
+        <p class="section-subtitle">시작하기 전에, 가볍게 생각해보는 시간입니다. 평소 여러분의 행동은 어땠나요?</p>
+
+        <div class="icebreaking-1-wrapper">
+          <div class="content-left animate-on-scroll">
+            <div class="question-list">
+              <div class="question-item active" data-q="1">
+                <span class="num">1</span>
+                <span class="q-text">오늘 아침 눈뜨자마자 가장 먼저 연 앱은 무엇인가요?</span>
+              </div>
+              <div class="question-item" data-q="2">
+                <span class="num">2</span>
+                <span class="q-text">하루 중 폰에서 가장 오랫동안 켜두는 앱은 어떤 건가요?</span>
+              </div>
+              <div class="question-item" data-q="3">
+                <span class="num">3</span>
+                <span class="q-text">그 앱을 켜자마자 제일 먼저 습관적으로 누르는 버튼은?</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone-visual animate-on-scroll">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen" id="poll-container">
+                <!-- Poll UI rendered dynamically by JS based on active question -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Icebreaking 2 Slide -->
+    <section class="slide" id="slide-2">
+      <div class="slide-content">
+        <h1 class="section-title">아이스브레이킹 <span>둘</span></h1>
+        <p class="section-subtitle">조금 더 깊이 들여다볼까요? 클릭하여 디자이너가 고민하는 포인트를 발견해보세요.</p>
+
+        <div class="icebreaking-2-grid animate-on-scroll">
+          <!-- Card 1 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front good-side">
+                <div class="character-icon"><img src="images/irangi_smile.svg" alt="Smile Irangi" class="card-character-img"></div>
+                <h3>최고의 경험</h3>
+                <p>앱을 사용하면서 "와, 이거 진짜 편리하다"라고 감탄했던 순간이 있으신가요?</p>
+                <div class="click-hint"><i class="fa-solid fa-hand-pointer"></i> 카드를 눌러 확인하기</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="back-title"><i class="fa-solid fa-wand-magic-sparkles"></i> 긍정적 사용성</div>
+                <p class="back-content">로그인 없이 결제가 끝나거나, 다음 볼 영상이 추천되어 바로 재생되는 순간. 물 흐르듯 자연스럽게 사용자의 목표가 달성되었을 때 우리는
+                  무의식적으로 편리함을 느낍니다.</p>
+                <div class="back-hint"><i class="fa-solid fa-arrow-rotate-left"></i> 뒤로가기</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front bad-side">
+                <div class="character-icon"><img src="images/irangi_angry.svg" alt="Angry Irangi" class="card-character-img"></div>
+                <h3>답답한 경험</h3>
+                <p>반대로 "이건 왜 이렇게 만들어놨지?" 하며 답답해했던 순간이 있었나요?</p>
+                <div class="click-hint"><i class="fa-solid fa-hand-pointer"></i> 카드를 눌러 확인하기</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="back-title"><i class="fa-solid fa-triangle-exclamation"></i> 부정적 사용성</div>
+                <p class="back-content">다음 화면으로 넘어가는 버튼이 너무 작아서 터치가 안 되거나, 결제 창을 찾기 위해 다섯 번 넘게 클릭해야 하는 복잡한 구조. 사소한 디자인
+                  오차가 커다란 피로도를 낳습니다.</p>
+                <div class="back-hint"><i class="fa-solid fa-arrow-rotate-left"></i> 뒤로가기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Diverse Devices and UI/UX Slide -->
+    <section class="slide" id="slide-3">
+      <div class="slide-content">
+        <h1 class="section-title">스마트폰을 넘어, <span>다양한 디바이스로</span></h1>
+        <p class="section-subtitle">오늘날 UI/UX 디자인은 모바일 앱을 넘어 우리 일상 속 모든 화면을 설계하는 영역으로 확장되었습니다. 각 기기를 마우스로 가리켜보세요.</p>
+
+        <div class="device-showcase-wrapper animate-on-scroll">
+          <!-- Device 1: Smart Watch -->
+          <div class="device-card-box">
+            <div class="device-frame watch-frame">
+              <div class="watch-strap upper"></div>
+              <div class="watch-body">
+                <div class="watch-screen">
+                  <div class="watch-ui">
+                    <div class="watch-temp"><i class="fa-solid fa-cloud-sun"></i> 24&deg;</div>
+                    <div class="watch-heart"><i class="fa-solid fa-heartbeat"></i> 78</div>
+                    <div class="watch-time">10:09</div>
+                  </div>
+                </div>
+              </div>
+              <div class="watch-strap lower"></div>
+            </div>
+            <div class="device-info-panel">
+              <h3>스마트워치 (Smart Watch)</h3>
+              <p>1~2인치 내외의 매우 협소한 원형/사각형 화면 기기입니다.</p>
+              <ul class="device-point-list">
+                <li><i class="fa-solid fa-check"></i> <strong>극도의 정보 압축</strong>: 꼭 필요한 필수 데이터만 즉시 전달</li>
+                <li><i class="fa-solid fa-check"></i> <strong>터치 정확도</strong>: 손가락 끝 굵기를 고려한 넉넉한 터치 영역</li>
+                <li><i class="fa-solid fa-check"></i> <strong>피드백 다각화</strong>: 화면 외에 진동, 알림음 등 햅틱 경험 활용</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Device 2: Mobile Phone -->
+          <div class="device-card-box">
+            <div class="device-frame mobile-frame">
+              <div class="mobile-body">
+                <div class="mobile-speaker"></div>
+                <div class="mobile-screen">
+                  <div class="mobile-ui">
+                    <div class="mobile-status-bar">
+                      <span>10:09</span>
+                      <div class="status-icons"><i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-three-quarters"></i></div>
+                    </div>
+                    <div class="mobile-content-card">
+                      <div class="card-thumb"></div>
+                      <div class="card-title-line"></div>
+                      <div class="card-desc-line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device-info-panel">
+              <h3>모바일 (Mobile Phone)</h3>
+              <p>우리가 일상에서 가장 흔하게 접하는 스마트폰 기기입니다.</p>
+              <ul class="device-point-list">
+                <li><i class="fa-solid fa-check"></i> <strong>한 손 조작성 (Thumb Zone)</strong>: 엄지손가락이 닿기 쉬운 영역에 주요 버튼 배치</li>
+                <li><i class="fa-solid fa-check"></i> <strong>다양한 해상도</strong>: 기기마다 제각각인 비율과 디스플레이 크기 대응</li>
+                <li><i class="fa-solid fa-check"></i> <strong>제스처 활용</strong>: 스와이프, 줌인, 롱프레스 등 직관적 행동 규칙 설계</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Device 3: Kiosk -->
+          <div class="device-card-box">
+            <div class="device-frame kiosk-frame">
+              <div class="kiosk-body">
+                <div class="kiosk-screen">
+                  <div class="kiosk-ui">
+                    <div class="kiosk-header-bar">KIOSK ORDER</div>
+                    <div class="kiosk-burger">
+                      <i class="fa-solid fa-hamburger"></i>
+                      <span>BIG BURGER</span>
+                    </div>
+                    <div class="kiosk-order-btn">주문 시작하기</div>
+                  </div>
+                </div>
+                <div class="kiosk-card-slot"><div class="slot-line"></div></div>
+              </div>
+              <div class="kiosk-stand"></div>
+            </div>
+            <div class="device-info-panel">
+              <h3>키오스크 (Kiosk)</h3>
+              <p>공공장소나 음식점에서 혼자 주문/결제하는 대형 화면 장치입니다.</p>
+              <ul class="device-point-list">
+                <li><i class="fa-solid fa-check"></i> <strong>빠른 결제 동선</strong>: 고민할 시간을 줄여주는 흐름 및 큰 메뉴판 구성</li>
+                <li><i class="fa-solid fa-check"></i> <strong>배리어 프리 (Barrier-Free)</strong>: 고령자나 휠체어 탑승자를 배려한 터치 위치 분기</li>
+                <li><i class="fa-solid fa-check"></i> <strong>물리 피드백 연동</strong>: 영수증 인쇄, 카드 삽입 상태 등 오프라인 기기 연동</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. UI/UX Definition Slide -->
+    <section class="slide" id="slide-4">
+      <div class="slide-content">
+        <h1 class="section-title">UI vs UX <span>차이점 알아보기</span></h1>
+        <p class="section-subtitle">카페에 비유해서 이해하면 훨씬 쉽게 다가옵니다. 탭을 선택해 비교해보세요.</p>
+
+        <div class="cafe-analogy-wrapper animate-on-scroll">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="ui">UI (User Interface)</button>
+            <button class="tab-btn" data-tab="ux">UX (User Experience)</button>
+          </div>
+
+          <div class="analogy-display">
+            <div class="display-visual highlight-ui" id="cafe-visual-box">
+              <div class="cafe-mockup">
+                <div class="cafe-interior"></div>
+                <div class="cafe-lights"></div>
+                <div class="cafe-menu-board">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                </div>
+                <div class="cafe-counter">
+                  <div class="espresso-machine"></div>
+                </div>
+                <div class="cafe-tables">
+                  <div class="table-item">
+                    <div class="table-top"></div>
+                    <div class="table-leg"></div>
+                    <div class="table-base"></div>
+                  </div>
+                  <div class="table-item">
+                    <div class="table-top"></div>
+                    <div class="table-leg"></div>
+                    <div class="table-base"></div>
+                  </div>
+                </div>
+                <div class="cafe-ux-flow">
+                  <div class="flow-path">
+                    <div class="flow-node">1</div>
+                    <div class="flow-node">2</div>
+                    <div class="flow-node">3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="display-text" id="cafe-text-box">
+              <!-- Content loaded via JS based on active tab -->
+            </div>
+          </div>
+        </div>
+
+        <!-- UI vs UX 차이점 요약 테이블 (이미지 번역본) -->
+        <div class="ui-ux-compare-table-wrapper animate-on-scroll">
+          <div class="compare-table-header">
+            <div class="table-col col-ui">User Interface (UI)</div>
+            <div class="table-col col-ux">User Experience (UX)</div>
+          </div>
+          <div class="compare-table-body">
+            <!-- Row 1 -->
+            <div class="table-row">
+              <div class="row-cell cell-ui">
+                <i class="fa-solid fa-eye cell-icon"></i>
+                <p>사용자가 제품과 상호작용할 수 있도록 돕는 <strong>시각적 요소</strong>를 의미합니다.</p>
+              </div>
+              <div class="row-cell cell-ux">
+                <i class="fa-solid fa-heart cell-icon"></i>
+                <p>사용자가 제품과 상호작용할 때 느끼는 <strong>감정과 정서</strong>에 관한 것입니다.</p>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="table-row">
+              <div class="row-cell cell-ui">
+                <i class="fa-solid fa-palette cell-icon"></i>
+                <p>제품의 <strong>룩앤필(Look & Feel)</strong>에 초점을 맞춥니다. (타이포그래피, 컬러, 이미지 등)</p>
+              </div>
+              <div class="row-cell cell-ux">
+                <i class="fa-solid fa-route cell-icon"></i>
+                <p>사용자 <strong>여정(User Journey)</strong>의 전반적인 사용자 친화성에 초점을 맞춥니다.</p>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="table-row">
+              <div class="row-cell cell-ui">
+                <i class="fa-solid fa-maximize cell-icon"></i>
+                <p>제품을 더욱 <strong>유용하고 심미적으로 매력적</strong>으로 만들며, 다양한 화면 크기에 최적화하는 것이 목표입니다.</p>
+              </div>
+              <div class="row-cell cell-ux">
+                <i class="fa-solid fa-smile cell-icon"></i>
+                <p><strong>효율적이고 사용하기 쉬운 제품</strong>을 통해 사용자에게 즐거움을 선사하는 것이 목표입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UI/UX Level Test Link Button -->
+        <div class="level-test-btn-wrapper animate-on-scroll">
+          <a href="https://smore.im/quiz/sVnyiiTIHi" target="_blank" rel="noopener noreferrer" class="level-test-btn">
+            <span class="btn-glow-effect"></span>
+            <span class="btn-content">
+              <i class="fa-solid fa-gamepad btn-icon"></i>
+              <strong>나의 UI/UX 레벨 테스트 해보기</strong>
+              <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. UI Core Principles Slide -->
+    <section class="slide" id="slide-5">
+      <div class="slide-content">
+        <h1 class="section-title">UI 디자인의 <span>4가지 핵심 고려사항</span></h1>
+        <p class="section-subtitle">단순히 아름다운 화면을 넘어, 사용자가 직관적으로 이해할 수 있는 시각 규칙을 설계해야 합니다. 각 카드를 클릭해보세요.</p>
+
+        <div class="ui-principles-grid animate-on-scroll">
+          <!-- Card 1: 일관성 -->
+          <div class="principle-grid-card">
+            <div class="card-header">
+              <div class="card-icon-area"><i class="fa-solid fa-cubes"></i></div>
+              <h4>01. 일관성 (Consistency)</h4>
+            </div>
+            <p class="card-desc">동일한 규격의 디자인 가이드를 기반으로 버튼 모양, 색상, 정렬 등 시각적 통일성을 유지해 유저의 인지 혼란을 막습니다.</p>
+            
+            <!-- 데모 예시 박스 -->
+            <div class="demo-box consistency-demo">
+              <div class="demo-sub-box bad">
+                <span class="demo-label">나쁜 예 (불일치)</span>
+                <div class="demo-content">
+                  <button class="bad-btn-1">취소</button>
+                  <button class="bad-btn-2">확인</button>
+                </div>
+              </div>
+              <div class="demo-sub-box good">
+                <span class="demo-label">좋은 예 (일관됨)</span>
+                <div class="demo-content">
+                  <button class="good-btn-consistent secondary">취소</button>
+                  <button class="good-btn-consistent primary">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: 시각적 위계 -->
+          <div class="principle-grid-card">
+            <div class="card-header">
+              <div class="card-icon-area"><i class="fa-solid fa-arrow-down-wide-narrow"></i></div>
+              <h4>02. 시각적 위계 (Visual Hierarchy)</h4>
+            </div>
+            <p class="card-desc">크기, 두께, 여백의 과감한 조절을 통해 핵심 요소(예: 타이틀)와 보조 요소(예: 설명) 간의 우선순위를 직관적으로 구분합니다.</p>
+            
+            <!-- 데모 예시 박스 -->
+            <div class="demo-box hierarchy-demo">
+              <div class="demo-sub-box bad">
+                <span class="demo-label">나쁜 예 (위계 없음)</span>
+                <div class="demo-content">
+                  <p class="hierarchy-bad-text">결제가 완료되었습니다 주문 번호 20260714-001 영수증 확인</p>
+                </div>
+              </div>
+              <div class="demo-sub-box good">
+                <span class="demo-label">좋은 예 (명확한 계층)</span>
+                <div class="demo-content">
+                  <h4 class="hierarchy-title">결제가 완료되었습니다</h4>
+                  <span class="hierarchy-info">주문 번호: 20260714-001</span>
+                  <p class="hierarchy-caption">* 영수증은 마이페이지에서 확인 가능</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: 가독성 & 대비 -->
+          <div class="principle-grid-card">
+            <div class="card-header">
+              <div class="card-icon-area"><i class="fa-solid fa-eye"></i></div>
+              <h4>03. 가독성 &amp; 대비 (Readability)</h4>
+            </div>
+            <p class="card-desc">텍스트와 배경의 명도 차이를 높이고 16px 이상의 본문 규격을 사용하여 어두운 환경에서도 눈이 피로하지 않도록 돕습니다.</p>
+            
+            <!-- 데모 예시 박스 -->
+            <div class="demo-box readability-demo">
+              <div class="demo-sub-box bad">
+                <span class="demo-label">나쁜 예 (낮은 대비)</span>
+                <div class="demo-content text-low-contrast">
+                  <p class="read-bad-text">배경과 글자 색 대비가 낮아 가독성이 불량한 텍스트</p>
+                </div>
+              </div>
+              <div class="demo-sub-box good">
+                <span class="demo-label">좋은 예 (높은 대비)</span>
+                <div class="demo-content text-high-contrast">
+                  <p class="read-good-text">충분한 대비와 줄간격을 확보하여 눈이 편안한 텍스트</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: 피드백 & 상태 -->
+          <div class="principle-grid-card">
+            <div class="card-header">
+              <div class="card-icon-area"><i class="fa-solid fa-spinner"></i></div>
+              <h4>04. 피드백 &amp; 상태 (Feedback)</h4>
+            </div>
+            <p class="card-desc">버튼 작동 시 로딩 서클이나 확인 체크 등 반응형 모션을 즉각 제공하여 시스템이 올바르게 실행 중임을 신뢰성 있게 전달합니다.</p>
+            
+            <!-- 데모 예시 박스 (인터랙션 버튼) -->
+            <div class="demo-box feedback-demo">
+              <div class="demo-sub-box single-box">
+                <span class="demo-label">인터랙티브 데모 (직접 눌러보세요)</span>
+                <div class="demo-content">
+                  <button class="feedback-demo-btn" id="principle-feedback-btn">
+                    <span class="btn-demo-txt"><i class="fa-solid fa-hand-pointer"></i> 결제 요청 터치</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. UX 5 Elements (Jesse James Garrett) Slide -->
+    <section class="slide" id="slide-6">
+      <div class="slide-content">
+        <h1 class="section-title">사용자 경험의 5단계, <span>UX 5 Elements</span></h1>
+        <p class="section-subtitle">추상적인 사용자의 생각(Strategy)이 눈에 보이는 비주얼(Surface)로 구체화되는 5가지 레이어 스택입니다. 각 단계를 클릭해보세요.</p>
+
+        <div class="ux-elements-wrapper animate-on-scroll">
+          <!-- Left: 5 Layer Pyramid Stack Graphic -->
+          <div class="ux-pyramid-area">
+            <div class="pyramid-stack">
+              <!-- Surface (Level 5) -->
+              <div class="pyramid-layer layer-5" data-layer="5">
+                <span class="layer-num">05</span>
+                <span class="layer-title">표면 (Surface)</span>
+                <span class="layer-abstractness abstract-low">구체적 (Concrete)</span>
+              </div>
+              <!-- Skeleton (Level 4) -->
+              <div class="pyramid-layer layer-4" data-layer="4">
+                <span class="layer-num">04</span>
+                <span class="layer-title">뼈대 (Skeleton)</span>
+              </div>
+              <!-- Structure (Level 3) -->
+              <div class="pyramid-layer layer-3" data-layer="3">
+                <span class="layer-num">03</span>
+                <span class="layer-title">구조 (Structure)</span>
+              </div>
+              <!-- Scope (Level 2) -->
+              <div class="pyramid-layer layer-2" data-layer="2">
+                <span class="layer-num">02</span>
+                <span class="layer-title">범위 (Scope)</span>
+              </div>
+              <!-- Strategy (Level 1) -->
+              <div class="pyramid-layer layer-1 active" data-layer="1">
+                <span class="layer-num">01</span>
+                <span class="layer-title">전략 (Strategy)</span>
+                <span class="layer-abstractness abstract-high">추상적 (Abstract)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Info Cards Details -->
+          <div class="ux-details-area">
+            <!-- Stage 1 Info -->
+            <div class="ux-detail-card active" data-layer="1">
+              <div class="detail-badge badge-strategy">01. Strategy (전략 단계)</div>
+              <h3>사용자 요구와 비즈니스 목표 정의</h3>
+              <p class="detail-description">제품을 "왜(Why)" 만드는가에 답하는 뿌리 단계입니다. 사용자가 이 제품을 통해 얻고 싶어 하는 가치와 기업이 달성하려는 명확한 비즈니스 성과를 일치시킵니다.</p>
+              <div class="detail-grid">
+                <div class="detail-info-item">
+                  <strong>핵심 질문</strong>
+                  <span>사용자는 누구인가? 그들의 진짜 문제는 무엇인가?</span>
+                </div>
+                <div class="detail-info-item">
+                  <strong>주요 활동</strong>
+                  <span>사용자 리서치, 시장 분석, 비즈니스 KPI 도출</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2 Info -->
+            <div class="ux-detail-card" data-layer="2">
+              <div class="detail-badge badge-scope">02. Scope (범위 단계)</div>
+              <h3>구현 기능 및 콘텐츠 요구사항 규정</h3>
+              <p class="detail-description">전략 단계에서 규명된 사용자의 목표를 해결하기 위해 구체적으로 제품이 "무엇(What)"을 담고 제공해야 하는지 기능 명세와 콘텐츠 범위를 정의합니다.</p>
+              <div class="detail-grid">
+                <div class="detail-info-item">
+                  <strong>핵심 질문</strong>
+                  <span>어떤 기능이 들어가는가? 정보와 콘텐츠의 양은 어떠한가?</span>
+                </div>
+                <div class="detail-info-item">
+                  <strong>주요 활동</strong>
+                  <span>기능 요구사항 정의서(PRD) 작성, 콘텐츠 인벤토리 구축</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3 Info -->
+            <div class="ux-detail-card" data-layer="3">
+              <div class="detail-badge badge-structure">03. Structure (구조 단계)</div>
+              <h3>정보 설계(IA) 및 인터랙션 흐름 설계</h3>
+              <p class="detail-description">유저가 원하는 정보를 빠르고 정확하게 찾을 수 있도록 메뉴의 계층을 조직화(Information Architecture)하고, 유저가 기능 간에 어떻게 "이동(How)"하는지 경로를 매핑합니다.</p>
+              <div class="detail-grid">
+                <div class="detail-info-item">
+                  <strong>핵심 질문</strong>
+                  <span>메뉴는 어떻게 구성되는가? 사용자의 행동 동선은 어떻게 흐르는가?</span>
+                </div>
+                <div class="detail-info-item">
+                  <strong>주요 활동</strong>
+                  <span>사이트맵(IA) 작성, 태스크 플로우(Task Flow) 및 유저 시나리오 설계</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 Info -->
+            <div class="ux-detail-card" data-layer="4">
+              <div class="detail-badge badge-skeleton">04. Skeleton (뼈대 단계)</div>
+              <h3>와이어프레임 기획 및 정보 정렬 배치</h3>
+              <p class="detail-description">추상적인 흐름이었던 구조 단계를 화면이라는 2차원 공간으로 옮겨오는 첫 설계입니다. 글자, 이미지, 버튼의 상대적인 "위치(Where)"와 중요도 비중을 와이어프레임으로 도식화합니다.</p>
+              <div class="detail-grid">
+                <div class="detail-info-item">
+                  <strong>핵심 질문</strong>
+                  <span>화면 내 요소들은 어디에 배치되는가? 유저의 시선은 어떻게 유도되는가?</span>
+                </div>
+                <div class="detail-info-item">
+                  <strong>주요 활동</strong>
+                  <span>로우파이 와이어프레임(Lo-Fi Wireframe), 인터페이스 레이아웃 기획</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 Info -->
+            <div class="ux-detail-card" data-layer="5">
+              <div class="detail-badge badge-surface">05. Surface (표면 단계)</div>
+              <h3>비주얼 그래픽 디자인 완성</h3>
+              <p class="detail-description">제품의 가장 바깥층이며 사용자의 감각이 직접 닿는 실체적 "시각(Visual)" 영역입니다. 정의된 뼈대 위에 아름다운 폰트, 정제된 브랜드 컬러, 일관된 스타일 킷을 얹어 최종 디자인을 완성합니다.</p>
+              <div class="detail-grid">
+                <div class="detail-info-item">
+                  <strong>핵심 질문</strong>
+                  <span>제품의 룩앤필(Look & Feel)은 어떠한가? 브랜드 정체성이 반영되었는가?</span>
+                </div>
+                <div class="detail-info-item">
+                  <strong>주요 활동</strong>
+                  <span>하이파이 디자인(Hi-Fi UI Design), 디자인 시스템 및 스타일 가이드 정립</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Good vs Bad UX Slide -->
+    <section class="slide" id="slide-7">
+      <div class="slide-content">
+        <h1 class="section-title">좋은 UX vs <span>나쁜 UX</span></h1>
+        <p class="section-subtitle">디자이너는 사용자가 "헤매는 순간"을 미리 발견해서 부드럽게 설계해주는 사람입니다.</p>
+
+        <div class="experience-compare-wrapper animate-on-scroll">
+          <!-- Bad UX Interaction -->
+          <div class="compare-panel bad-ux">
+            <div>
+              <h3>나쁜 UX 사례</h3>
+              <p class="subtitle">중요한 버튼을 구석에 작게 배치하거나 찾기 힘들게 만들었을 때</p>
+            </div>
+            <div class="interactive-zone" id="bad-zone">
+              <button class="btn btn-primary runaway-btn" id="run-btn">
+                <i class="fa-solid fa-hourglass-half"></i> 찾아서 누르기
+              </button>
+              <div class="bad-char-box">
+                <img src="images/irangi_disapoint.svg" alt="Disappoint Irangi" class="bad-char-img">
+              </div>
+              <div class="bad-ux-hint" id="bad-hint">경고: 사용자가 원하는 버튼이 묻히거나 숨어 있어 헤매게 됩니다!</div>
+            </div>
+          </div>
+
+          <!-- Good UX Interaction -->
+          <div class="compare-panel good-ux">
+            <div>
+              <h3>좋은 UX 사례</h3>
+              <p class="subtitle">다음에 무얼 눌러야 할지 한눈에 보이고 즉각적으로 행동을 유도할 때</p>
+            </div>
+            <div class="interactive-zone">
+              <div style="text-align: center; position: relative;">
+                <button class="btn btn-primary" id="good-btn">
+                  <i class="fa-solid fa-circle-play"></i> 재생 버튼
+                </button>
+                <div class="ux-success-msg" id="good-msg">
+                  <div class="good-char-box">
+                    <img src="images/irangi_smile.svg" alt="Smile Irangi" class="good-char-img">
+                  </div>
+                  <span><i class="fa-solid fa-square-check"></i> 훌륭합니다! 스트레스 없이 정확하게 한 번에 재생을 시작했습니다.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Design Thinking & Double Diamond Slide -->
+    <section class="slide" id="slide-8">
+      <div class="slide-content">
+        <h1 class="section-title">디자이너의 생각법, <span>더블 다이아몬드</span></h1>
+        <p class="section-subtitle">문제를 올바르게 정의하고 창의적으로 해결하기 위한 디자인씽킹의 핵심 방법론입니다. 각 단계를 클릭해보세요.</p>
+
+        <div class="double-diamond-wrapper animate-on-scroll">
+          <!-- Left: Visual Graphic -->
+          <div class="diamond-visual-area">
+            <div class="diamond-graphics-container">
+              <!-- Left Diamond (Problem Space) -->
+              <div class="diamond-block shape-left active">
+                <div class="diamond-inner">
+                  <div class="diamond-label">PROBLEM SPACE<br><span>(문제 공간)</span></div>
+                  <div class="diamond-lines">
+                    <span class="line-element line-diverge">Discover</span>
+                    <span class="line-element line-converge">Define</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right Diamond (Solution Space) -->
+              <div class="diamond-block shape-right">
+                <div class="diamond-inner">
+                  <div class="diamond-label">SOLUTION SPACE<br><span>(해결 공간)</span></div>
+                  <div class="diamond-lines">
+                    <span class="line-element line-diverge">Develop</span>
+                    <span class="line-element line-converge">Deliver</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Graphic Dots Indicator overlay -->
+            <div class="diamond-steps-indicator">
+              <span class="step-dot active" data-phase="discover">1. 발견</span>
+              <span class="step-dot" data-phase="define">2. 정의</span>
+              <span class="step-dot" data-phase="develop">3. 개발</span>
+              <span class="step-dot" data-phase="deliver">4. 전달</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Description Cards -->
+          <div class="diamond-cards-list">
+            <!-- Phase 1 -->
+            <div class="diamond-card active" data-phase="discover">
+              <div class="card-phase-badge color-discover">01. Discover (발견)</div>
+              <h3>사용자 관찰과 리서치 (발산)</h3>
+              <p>기존의 편견을 버리고 사용자가 겪는 진짜 불편함이 무엇인지 깊이 관찰하고 다양한 목소리를 넓게 수집하는 리서치 단계입니다.</p>
+              <div class="phase-keywords">
+                <span>#사용자_리서치</span>
+                <span>#페인포인트_탐색</span>
+                <span>#발산적_사고</span>
+              </div>
+            </div>
+            <!-- Phase 2 -->
+            <div class="diamond-card" data-phase="define">
+              <div class="card-phase-badge color-define">02. Define (정의)</div>
+              <h3>핵심 문제의 규명 (수렴)</h3>
+              <p>조사된 다양한 문제점들을 분류하고 좁혀나가, 우리가 해결해야 할 단 하나의 가장 가치 있는 핵심 문제를 명확하게 정의합니다.</p>
+              <div class="phase-keywords">
+                <span>#핵심문제_도출</span>
+                <span>#페르소나_정립</span>
+                <span>#수렴적_사고</span>
+              </div>
+            </div>
+            <!-- Phase 3 -->
+            <div class="diamond-card" data-phase="develop">
+              <div class="card-phase-badge color-develop">03. Develop (개발)</div>
+              <h3>아이디어 전개와 테스트 (발산)</h3>
+              <p>정의된 핵심 문제를 해결하기 위해 다양한 아이디어를 브레인스토밍하고, 스케치나 프로토타입을 만들어 유효성을 빠르게 테스트합니다.</p>
+              <div class="phase-keywords">
+                <span>#아이디어_발산</span>
+                <span>#스케치_프로토타입</span>
+                <span>#가설_검증</span>
+              </div>
+            </div>
+            <!-- Phase 4 -->
+            <div class="diamond-card" data-phase="deliver">
+              <div class="card-phase-badge color-deliver">04. Deliver (전달)</div>
+              <h3>제품 구체화 및 출시 (수렴)</h3>
+              <p>최종 선정된 솔루션의 세부 인터페이스와 사용성을 다듬어 실제 구현을 완료하고, 사용자가 사용할 수 있도록 최종 출시합니다.</p>
+              <div class="phase-keywords">
+                <span>#최종_디자인시스템</span>
+                <span>#개발_최종검수</span>
+                <span>#서비스_출시</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Service process Slide -->
+    <section class="slide" id="slide-9">
+      <div class="slide-content">
+        <h1 class="section-title">서비스 하나가 <span>탄생하기까지</span></h1>
+        <p class="section-subtitle">기획부터 배포까지 제품이 탄생하는 순서입니다. 각 단계를 클릭하여 무엇을 하는지 알아보세요.</p>
+
+        <div class="creation-process-wrapper animate-on-scroll">
+          <div class="timeline-nav">
+            <div class="timeline-progress" id="timeline-bar"></div>
+            <div class="timeline-node active" data-step="1">1<span class="node-title">리서치</span></div>
+            <div class="timeline-node" data-step="2">2<span class="node-title">기획 &middot; 전략</span></div>
+            <div class="timeline-node" data-step="3">3<span class="node-title">구조 설계</span></div>
+            <div class="timeline-node" data-step="4">4<span class="node-title">UI 디자인</span></div>
+            <div class="timeline-node" data-step="5">5<span class="node-title">프로토타입</span></div>
+            <div class="timeline-node" data-step="6">6<span class="node-title">개발 &middot; 출시</span></div>
+          </div>
+
+          <div id="process-cards">
+            <!-- Dynamic steps loaded by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. UXUI vs Product Designer Slide -->
+    <section class="slide" id="slide-10">
+      <div class="slide-content">
+        <h1 class="section-title">UXUI 디자이너 vs <span>프로덕트 디자이너</span></h1>
+        <p class="section-subtitle">현업에서 자주 혼용되지만, 핵심 목표와 초점이 서로 다른 두 디자이너 직무를 한눈에 비교해보세요.</p>
+
+        <div class="job-compare-wrapper animate-on-scroll">
+          <!-- Left: UXUI Designer -->
+          <div class="job-column uiux-job">
+            <div class="job-header">
+              <div class="job-badge"><i class="fa-solid fa-desktop"></i> UXUI DESIGNER</div>
+              <h3>UXUI 디자이너</h3>
+              <p class="focus-label">"화면의 사용성과 사용자의 디지털 경험에 집중"</p>
+            </div>
+            <div class="job-body">
+              <ul class="job-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> <strong>최적의 화면 설계</strong>: 앱/웹의 UI 레이아웃, 컬러, 컴포넌트 일관성 제어</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>사용성 검증 및 리서치</strong>: UT, 행동 로그 기반의 사용성 결함 발견 및 수정</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>화면 중심의 여정 설계</strong>: 첫 진입부터 이탈까지 물 흐르듯 유연한 흐름 설계</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Product Designer -->
+          <div class="job-column product-job">
+            <div class="job-header">
+              <div class="job-badge"><i class="fa-solid fa-chart-line"></i> PRODUCT DESIGNER</div>
+              <h3>프로덕트 디자이너</h3>
+              <p class="focus-label">"사용성 해결을 넘어 비즈니스 전략과 제품 가치 설계"</p>
+            </div>
+            <div class="job-body">
+              <ul class="job-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> <strong>비즈니스 임팩트 고려</strong>: 디자인이 매출, 리텐션 등의 지표에 어떤 기여를 하는가 고민</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>더 넓은 제품 오너십</strong>: 단순 화면 설계에서 나아가 비즈니스 기획 및 설계에 주도적 참여</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>개발/기획과의 조화</strong>: 프로덕트 매니저(PM)에 필적하는 거시적 안목으로 협업</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bottom: Shared Core Competence -->
+        <div class="job-shared-core animate-on-scroll">
+          <div class="shared-badge"><i class="fa-solid fa-handshake"></i> 두 직무의 핵심 공통 영역</div>
+          <p>어떤 명칭이든 결국 <strong>"사용자의 문제점을 정확하게 찾아내고(Problem Solving), 화면을 통해 우아하게 해결하는 직업"</strong>이라는 본질은 완전히 동일합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Tools vs Soft Skills Slide -->
+    <section class="slide" id="slide-11">
+      <div class="slide-content">
+        <h1 class="section-title">그럼 어떤 <span>능력이 필요할까?</span></h1>
+        <p class="section-subtitle">디자이너가 다루는 하드 스킬(도구)과 오랫동안 살아남기 위해 필수적인 소프트 스킬입니다.</p>
+
+        <div class="capability-section-grid animate-on-scroll">
+          <!-- Tools (Hard Skills) -->
+          <div class="capability-group">
+            <h3>TOOLS (디자인 도구)</h3>
+            <div class="tool-item-card">
+              <div class="tool-icon"><i class="fa-brands fa-figma"></i></div>
+              <div class="tool-info">
+                <h4>Figma</h4>
+                <p>화면 실무 설계 및 팀 협업을 위한 글로벌 메인 표준 프로그램</p>
+              </div>
+            </div>
+            <div class="tool-item-card">
+              <div class="tool-icon"><i class="fa-solid fa-paintbrush"></i></div>
+              <div class="tool-info">
+                <h4>Photoshop &amp; Illustrator</h4>
+                <p>고품질의 소스 가공 및 벡터 그래픽 드로잉을 위한 도구</p>
+              </div>
+            </div>
+            <div class="tool-item-card">
+              <div class="tool-icon"><i class="fa-solid fa-list-check"></i></div>
+              <div class="tool-info">
+                <h4>Notion &amp; FigJam</h4>
+                <p>아이디어 구조 정의, 기획안 작성 및 일정 관리를 위한 협업 문서</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="capability-group">
+            <h3>SOFT SKILLS (커뮤니케이션 &amp; 관점)</h3>
+            <div style="display: grid; grid-template-rows: repeat(3, 1fr); gap: 20px; flex: 1;">
+
+              <div class="softskill-card">
+                <div class="skill-main">
+                  <h4><i class="fa-solid fa-people-arrows"></i> 공감 능력</h4>
+                  <p>화면 뒤에서 조용히 내 앱을 사용하는 '진짜 타인'의 불편한 마음 읽기</p>
+                </div>
+                <div class="skill-overlay">
+                  <h4>사용자 중심 사고의 시작</h4>
+                  <p>우리는 흔히 내가 편하다고 해서 다른 사람도 똑같이 편할 것으로 오해합니다. 진정한 공감은 나의 편견을 내려놓고 사용자가 막히는 구간을 제3자의 시선에서 가만히 들여다보는
+                    것입니다.</p>
+                </div>
+              </div>
+
+              <div class="softskill-card">
+                <div class="skill-main">
+                  <h4><i class="fa-solid fa-comments"></i> 논리적 설득력</h4>
+                  <p>"그냥 예뻐서요"가 아닌 데이터와 디자인 규칙에 기반한 커뮤니케이션</p>
+                </div>
+                <div class="skill-overlay">
+                  <h4>협업을 이끄는 커뮤니케이션</h4>
+                  <p>디자이너는 기획자나 개발자에게 자신의 디자인을 왜 이렇게 했는지 설명할 수 있어야 합니다. 명확한 시각 근거와 타당한 논리가 뒷받침될 때 비로소 원하는 디자인이 제품에 그대로
+                    출시될 수 있습니다.</p>
+                </div>
+              </div>
+
+              <div class="softskill-card">
+                <div class="skill-main">
+                  <h4><i class="fa-solid fa-arrows-spin"></i> 피드백 수용력</h4>
+                  <p>나의 창작물에 대한 비판과 분석에 대해 상처받지 않고 수용하는 단단함</p>
+                </div>
+                <div class="skill-overlay">
+                  <h4>단단한 성장을 돕는 마인드</h4>
+                  <p>디자인은 나만의 예술 작품이 아닙니다. 비즈니스 성과와 사용성을 위한 결과물이기 때문에 다양한 직군으로부터 검토와 지적을 받을 수 있습니다. 비판을 피드백으로 받아들여 보완해
+                    나가는 수용력이 중요합니다.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Majors and Preparation Slide -->
+    <section class="slide" id="slide-12">
+      <div class="slide-content">
+        <h1 class="section-title">전공과 진로 <span>준비하기</span></h1>
+        <p class="section-subtitle">시각디자인과 1학년 학생으로서 지금부터 어떤 방향으로 마인드셋을 가질 수 있을까요?</p>
+
+        <div class="career-grid-wrapper animate-on-scroll">
+          <div class="info-box-card">
+            <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>전공의 문턱은 넓습니다</h3>
+            <p>시각디자인이나 산업디자인 전공이 많지만, 컴퓨터공학이나 인지심리학, 혹은 문과 등 다양한 분야에서 전직해온 훌륭한 디자이너가 무척 많습니다. 백그라운드보다 문제 해결 능력이 핵심입니다.
+            </p>
+            <div class="tag-list">
+              <span>디자인전공</span>
+              <span>인지과학</span>
+              <span>컴퓨터공학</span>
+            </div>
+          </div>
+
+          <div class="info-box-card">
+            <div class="card-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <h3>포트폴리오가 곧 학위</h3>
+            <p>실무 채용을 진행할 때 가장 엄격하게 들여다보는 것은 점수나 학벌이 아닌 포트폴리오입니다. 어떤 과정을 거쳐 아이디어를 냈고, 어떤 논리로 문제를 발견하고 풀었는지가 상세히 드러나야
+              합니다.</p>
+            <div class="tag-list">
+              <span>논리 프로세스</span>
+              <span>실제 기획</span>
+              <span>해결책 증명</span>
+            </div>
+          </div>
+
+          <div class="info-box-card">
+            <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>지금 바로 시작할 수 있는 것</h3>
+            <p>평소에 내 폰에 깔린 앱들을 조심히 관찰하는 습관을 가져보세요. 가볍게 불편한 앱의 화면을 스크린샷 찍어 다시 배치해보거나, 공모전에 참가하여 아이디어를 발산해보는 것도 큰 학습이 됩니다.
+            </p>
+            <div class="tag-list">
+              <span>앱 흉내내기</span>
+              <span>사용성 분석</span>
+              <span>일일 스케치</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Salary and Careers Slide -->
+    <section class="slide" id="slide-13">
+      <div class="slide-content">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+          <div>
+            <h1 class="section-title">현실적인 이야기, <span>연봉과 진로</span></h1>
+            <p class="section-subtitle">대학 입학 후 가장 관심을 두는 직군별 채용 흐름과 기본적인 현업 형태를 소개합니다.</p>
+          </div>
+          <div class="career-char-decor animate-on-scroll">
+            <img src="images/irangi_dong_give_up.svg" alt="Don't Give Up Irangi" class="career-char-img">
+          </div>
+        </div>
+
+        <div class="career-grid-wrapper animate-on-scroll">
+          <div class="info-box-card">
+            <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
+            <h3>어디서 활약하게 되나요?</h3>
+            <p>IT 서비스를 자체 개발하는 대기업 인하우스, 기민하게 기획부터 로켓 성장하는 스타트업, 다양한 기업의 프로젝트를 수주하여 제작하는 에이전시, 자유로운 프리랜서 등 여러 길이 존재합니다.
+            </p>
+            <div class="tag-list">
+              <span>인하우스</span>
+              <span>스타트업</span>
+              <span>디자인에이전시</span>
+            </div>
+          </div>
+
+          <div class="info-box-card">
+            <div class="card-icon"><i class="fa-solid fa-coins"></i></div>
+            <h3>신입 연봉은 어느 정도인가요?</h3>
+            <p>초기 연봉은 비즈니스 형태와 시장의 상황, 회사의 볼륨에 따라 격차가 크게 납니다. 숫자 자체보다 기업의 성장성이나 프로젝트의 범위, 나 자신이 주도할 수 있는 영역이 있는지가 중요합니다.
+            </p>
+            <div class="tag-list">
+              <span>초봉 편차 다양</span>
+              <span>매년 공고 분석</span>
+              <span>자기 역량 가치</span>
+            </div>
+          </div>
+
+          <div class="info-box-card">
+            <div class="card-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3>가장 단단하고 강한 무기</h3>
+            <p>흔한 스펙 점수나 이론성 자격증보다, 실제로 작은 앱이나 화면 단 하나라도 처음부터 끝까지 고민해서 마침표를 찍어본 경험이 입사 전형에서 가장 뛰어난 점수로 부각됩니다.</p>
+            <div class="tag-list">
+              <span>결과물 완수</span>
+              <span>프로젝트 회고</span>
+              <span>스펙보다 포폴</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Q&A Slide -->
+    <section class="slide" id="slide-14">
+      <div class="slide-content">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; margin-bottom: 20px;">
+          <div>
+            <h1 class="section-title">자유로운 <span>질의응답</span></h1>
+            <p class="section-subtitle" style="margin-bottom: 0;">평소 UI/UX에 대해 궁금했던 대표적인 세 가지 물음에 미리 답변해 드립니다.</p>
+          </div>
+          <div class="qa-char-decor animate-on-scroll">
+            <img src="images/irangi_is_it_difficult.svg" alt="Is it difficult Irangi" class="qa-char-img">
+          </div>
+        </div>
+
+        <div class="qa-accordion-wrapper animate-on-scroll">
+          <div class="accordion-item active">
+            <div class="accordion-header">
+              <div class="header-text">
+                <span class="q-badge">Q</span>
+                <span>디자이너가 되려면 순수 미술이나 드로잉을 꼭 잘해야 하나요?</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+              그림을 아름답게 그리는 실력도 레이아웃이나 아이콘 제작에 긍정적인 밑바탕이 되지만, 절대적인 필수 조건은 아닙니다. UI/UX 디자인은 아름다운 일러스트보다 정보의 뼈대를 어떻게 잡고
+              사용자를 편리하게 유도하는가에 더 가깝기 때문입니다. 논리적 정보 설계와 시각 규칙을 지키는 훈련이 훨씬 큰 비중을 차지합니다.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <div class="header-text">
+                <span class="q-badge">Q</span>
+                <span>남은 대학 생활 동안 무엇을 위주로 준비하면 유용할까요?</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+              가장 첫 번째는 호기심 섞인 눈입니다. 평소 자주 쓰는 앱들이 갑자기 개편되면 왜 그렇게 구조가 바뀌었는지 사용자의 입장에서 장단점을 꼼꼼히 적어보세요. 또한, 기획자나 개발자 친구들과 작은
+              토이 프로젝트 팀을 결성하여 작게라도 실제 웹이나 앱 서비스를 출시해보는 과정이 훗날 포트폴리오에서 가장 강력한 차별점이 될 것입니다.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <div class="header-text">
+                <span class="q-badge">Q</span>
+                <span>실무를 진행하면서 가장 에너지가 소모되거나 고된 점은 무엇인가요?</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+              사용자와 동료 등 무수히 많은 사람을 만나는 끝없는 소통입니다. 내 머릿속에 있는 디자인 아이디어가 왜 맞는지 납득할 만한 근거를 세워야 하며, 기술적인 한계로 구현하기 어려워하는 개발팀이나
+              단기 매출을 우선하는 사업팀 사이에서 타협하고 조율하는 과정이 잦습니다. 그러나 조율 끝에 탄생한 서비스가 사용자를 즐겁게 만들 때 얻는 성취감은 그것을 완전히 덮어줍니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Closing Message & Thank you Slide Combined -->
+    <section class="slide" id="slide-15">
+      <div class="slide-content">
+        <div class="footer-wrapper animate-on-scroll">
+          <div class="typing-text" id="typewriter"></div>
+          <div class="cheerup-char-box">
+            <img src="images/irangi_cheerup.svg" alt="Cheer up Irangi" class="cheerup-char-img">
+          </div>
+          <div class="thanks-title">Thank You</div>
+          <p class="section-subtitle" style="margin-bottom: 20px;">여러분의 낙서가 언젠가 누군가의 삶을 더 윤택하게 만드는 멋진 화면이 되기를 진심으로 바랍니다.
+          </p>
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <span>blackcrown.ejey@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interaction Logic Script -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
