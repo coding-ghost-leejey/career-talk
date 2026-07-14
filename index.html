@@ -34,9 +34,9 @@
     <div class="nav-dot" data-slide="2"><span class="nav-tooltip">2. 사용성 질문</span></div>
     <div class="nav-dot" data-slide="3"><span class="nav-tooltip">3. 다양한 디바이스</span></div>
     <div class="nav-dot" data-slide="4"><span class="nav-tooltip">4. UI vs UX 차이점</span></div>
-    <div class="nav-dot" data-slide="5"><span class="nav-tooltip">5. UI 고려사항</span></div>
-    <div class="nav-dot" data-slide="6"><span class="nav-tooltip">6. UX 5단계</span></div>
-    <div class="nav-dot" data-slide="7"><span class="nav-tooltip">7. UX의 좋고 나쁨</span></div>
+    <div class="nav-dot" data-slide="5"><span class="nav-tooltip">5. UI vs UX 카드 퀴즈</span></div>
+    <div class="nav-dot" data-slide="6"><span class="nav-tooltip">6. UI 고려사항</span></div>
+    <div class="nav-dot" data-slide="7"><span class="nav-tooltip">7. UX 5단계</span></div>
     <div class="nav-dot" data-slide="8"><span class="nav-tooltip">8. 디자인씽킹 단계</span></div>
     <div class="nav-dot" data-slide="9"><span class="nav-tooltip">9. 문제해결 모델</span></div>
     <div class="nav-dot" data-slide="10"><span class="nav-tooltip">10. 서비스 탄생 단계</span></div>
@@ -377,8 +377,33 @@
       </div>
     </section>
 
-    <!-- 5. UI Core Principles Slide -->
+    <!-- 5. UI vs UX Card Quiz Slide -->
     <section class="slide" id="slide-5">
+      <div class="slide-content">
+        <h1 class="section-title">UI vs UX <span>카드 퀴즈!</span></h1>
+        <p class="section-subtitle">아래 10가지 실무 개념 카드를 클릭하여 뒤집어보세요. 각 개념이 UI에 속하는지 UX에 속하는지 맞혀봅시다!</p>
+
+        <!-- Quiz Status Area -->
+        <div class="quiz-status-bar animate-on-scroll">
+          <div class="quiz-progress">
+            <span class="progress-label"><i class="fa-solid fa-square-check"></i> 확인한 카드:</span>
+            <strong id="checked-cards-count">0</strong> / 10
+          </div>
+          <div class="quiz-controls">
+            <button id="btn-reveal-all" class="quiz-control-btn"><i class="fa-solid fa-eye"></i> 전체 정답 보기</button>
+            <button id="btn-reset-quiz" class="quiz-control-btn"><i class="fa-solid fa-rotate-right"></i> 다시 풀기</button>
+          </div>
+        </div>
+
+        <!-- Quiz Grid Container -->
+        <div class="quiz-grid animate-on-scroll" id="quiz-grid">
+          <!-- JS를 통해 10개의 카드가 셔플되어 동적으로 렌더링됩니다. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. UI Core Principles Slide -->
+    <section class="slide" id="slide-6">
       <div class="slide-content">
         <h1 class="section-title">UI 디자인의 <span>4가지 핵심 고려사항</span></h1>
         <p class="section-subtitle">단순히 아름다운 화면을 넘어, 사용자가 직관적으로 이해할 수 있는 시각 규칙을 설계해야 합니다. 각 카드를 클릭해보세요.</p>
@@ -487,8 +512,8 @@
       </div>
     </section>
 
-    <!-- 6. UX 5 Elements (Jesse James Garrett) Slide -->
-    <section class="slide" id="slide-6">
+    <!-- 7. UX 5 Elements (Jesse James Garrett) Slide -->
+    <section class="slide" id="slide-7">
       <div class="slide-content">
         <h1 class="section-title">사용자 경험의 5단계, <span>UX 5 Elements</span></h1>
         <p class="section-subtitle">추상적인 사용자의 생각(Strategy)이 눈에 보이는 비주얼(Surface)로 구체화되는 5가지 레이어 스택입니다. 각 단계를 클릭해보세요.</p>
@@ -775,115 +800,7 @@
       </div>
     </section>
 
-    <!-- 9. Design Thinking 5 Stages Slide -->
-    <section class="slide" id="slide-9">
-      <div class="slide-content">
-        <h1 class="section-title">사용자 중심의 문제 해결, <span>디자인씽킹 5단계</span></h1>
-        <p class="section-subtitle">인간에 집중하여 혁신적인 비즈니스 솔루션을 도출해내는 Stanford d.school의 5가지 핵심 단계입니다. 각 단계를 클릭해보세요.</p>
 
-        <div class="design-thinking-wrapper animate-on-scroll">
-          <!-- Horizontal Stages Flow -->
-          <div class="stages-flow-container">
-            <!-- Stage 1 -->
-            <div class="stage-node active" data-stage="0">
-              <div class="node-circle"><i class="fa-solid fa-heart"></i></div>
-              <div class="node-label">1. 공감하기<br><span>(Empathize)</span></div>
-            </div>
-            <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-
-            <!-- Stage 2 -->
-            <div class="stage-node" data-stage="1">
-              <div class="node-circle"><i class="fa-solid fa-bullseye"></i></div>
-              <div class="node-label">2. 정의하기<br><span>(Define)</span></div>
-            </div>
-            <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-
-            <!-- Stage 3 -->
-            <div class="stage-node" data-stage="2">
-              <div class="node-circle"><i class="fa-solid fa-lightbulb"></i></div>
-              <div class="node-label">3. 아이디어 도출<br><span>(Ideate)</span></div>
-            </div>
-            <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-
-            <!-- Stage 4 -->
-            <div class="stage-node" data-stage="3">
-              <div class="node-circle"><i class="fa-solid fa-hammer"></i></div>
-              <div class="node-label">4. 프로토타입<br><span>(Prototype)</span></div>
-            </div>
-            <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-
-            <!-- Stage 5 -->
-            <div class="stage-node" data-stage="4">
-              <div class="node-circle"><i class="fa-solid fa-vial"></i></div>
-              <div class="node-label">5. 테스트<br><span>(Test)</span></div>
-            </div>
-          </div>
-
-          <!-- Description Cards underneath (5 cards) -->
-          <div class="stages-cards-container">
-            <!-- Card 1 -->
-            <div class="stage-desc-card active" data-stage="0">
-              <div class="card-stage-badge">STAGE 01. Empathize</div>
-              <h3>사용자의 정서적 맥락을 깊이 이해</h3>
-              <p>기존의 주관적인 생각이나 편견을 걷어내고, 실제 사용자의 입장이 되어 그들이 겪는 환경을 면밀히 관찰하고, 인터뷰하여 진짜 속마음과 고충을 파악하는 정성 리서치 단계입니다.</p>
-              <div class="stage-actions">
-                <span><i class="fa-solid fa-check"></i> 심층 인터뷰</span>
-                <span><i class="fa-solid fa-check"></i> 사용자 행동 관찰</span>
-                <span><i class="fa-solid fa-check"></i> 공감 지도 작성</span>
-              </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="stage-desc-card" data-stage="1">
-              <div class="card-stage-badge">STAGE 02. Define</div>
-              <h3>진짜 해결할 가치 있는 문제의 규명</h3>
-              <p>1단계 공감 과정에서 발견한 사용자의 수많은 페인포인트와 목소리를 분류하고 가려내어, '우리가 궁극적으로 해결해야 할 진짜 핵심 문제'가 무엇인지 명확하게 한 문장으로 정의하는 수렴적
-                도출 단계입니다.</p>
-              <div class="stage-actions">
-                <span><i class="fa-solid fa-check"></i> 핵심 페인포인트 정의</span>
-                <span><i class="fa-solid fa-check"></i> HMW(How Might We) 도출</span>
-                <span><i class="fa-solid fa-check"></i> 페르소나 설정</span>
-              </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="stage-desc-card" data-stage="2">
-              <div class="card-stage-badge">STAGE 03. Ideate</div>
-              <h3>형식에 구애받지 않는 자유로운 해결책 발산</h3>
-              <p>정의된 핵심 문제를 해결하기 위해 다양한 팀원들이 모여 실현 가능성에 제약을 두지 않고 수많은 대안과 참신한 아이디어를 브레인스토밍하고 쏟아내는 발산적 아이디어 레이아웃 단계입니다.
-              </p>
-              <div class="stage-actions">
-                <span><i class="fa-solid fa-check"></i> 브레인스토밍</span>
-                <span><i class="fa-solid fa-check"></i> 아이디어 마인드맵</span>
-                <span><i class="fa-solid fa-check"></i> 신속 스케치 워크숍</span>
-              </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="stage-desc-card" data-stage="3">
-              <div class="card-stage-badge">STAGE 04. Prototype</div>
-              <h3>신속하게 만져볼 수 있는 가상의 모형 제작</h3>
-              <p>선정된 아이디어의 타당성을 빠르게 판단하기 위해 피그마로 화면을 연결해보거나, 종이 스케치, 와이어프레임 등 최소한의 비용과 노력을 들여 눈앞에 실체화하는 실감형 가상 제품 설계
-                단계입니다.</p>
-              <div class="stage-actions">
-                <span><i class="fa-solid fa-check"></i> 종이 와이어프레임</span>
-                <span><i class="fa-solid fa-check"></i> 피그마 인터랙션 목업</span>
-                <span><i class="fa-solid fa-check"></i> 로우 파이 데모 제작</span>
-              </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="stage-desc-card" data-stage="4">
-              <div class="card-stage-badge">STAGE 05. Test</div>
-              <h3>사용자 피드백을 통한 아이디어 검증 및 보완</h3>
-              <p>제작된 프로토타입을 실제 사용자들에게 사용해보게 한 뒤, 그들의 반응과 목소리(피드백)를 수집하여 우리가 세운 가설이 유효한지 검증하고 제품의 완성도를 지속 보완 및 피드백 순환하는
-                검증 단계입니다.</p>
-              <div class="stage-actions">
-                <span><i class="fa-solid fa-check"></i> 사용성 테스트(UT)</span>
-                <span><i class="fa-solid fa-check"></i> 에러 및 불편 사항 파악</span>
-                <span><i class="fa-solid fa-check"></i> 아이디어 반복 피드백</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- 10. Service process Slide -->
     <section class="slide" id="slide-10">

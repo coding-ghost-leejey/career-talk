@@ -682,4 +682,124 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
   }
 
+
+  /* ==========================================
+     12. UI/UX Card Quiz (5. Card Quiz Slide)
+     ========================================== */
+  const quizData = [
+    { id: 1, title: "OTT 영상 위에 마우스를 올리면 예고편이 재생된다", type: "UX", icon: "fa-solid fa-play", desc: "사용자가 영상을 일일이 클릭해 진입하기 전에, 썸네일 위에서 머무는(Hover) 행동만으로 예고편을 재생시켜 빠른 탐색을 돕는 기획" },
+    { id: 2, title: "쇼핑몰 옷 이미지 위에 호버하면 사진이 확대된다", type: "UI", icon: "fa-solid fa-magnifying-glass", desc: "상품 목록 페이지에서 옷 디테일을 시각적으로 바로 확인할 수 있도록, 마우스 포인트가 올라갈 때 이미지가 확대 연출되는 디자인" },
+    { id: 3, title: "배달 주문 후 지도로 배달원의 실시간 위치를 보여준다", type: "UX", icon: "fa-solid fa-motorcycle", desc: "주문 완료 후 배달 오토바이가 어디쯤 움직이고 있는지 실시간으로 중계하여, 하염없이 기다리는 유저의 인지적 불안을 지워주는 경험 기획" },
+    { id: 4, title: "화면을 내려도 메뉴 바가 항상 화면 맨 위에 붙어있다", type: "UI", icon: "fa-solid fa-thumbtack", desc: "상세 내용을 확인하기 위해 아래로 길게 스크롤하더라도 핵심 경로 이동을 바로 돕도록 메뉴 바를 시각적으로 상단에 밀착 고정하는 배치" },
+    { id: 5, title: "인스타그램 피드를 내리면 끝없이 다음 글이 연결된다", type: "UX", icon: "fa-solid fa-arrows-up-down", desc: "다음 페이지 번호를 찾아 클릭하는 불필요한 단계를 제거하고, 스크롤을 내리는 행동만으로 끊임없이 다음 글을 서빙하는 무한스크롤 설계" },
+    { id: 6, title: "데이터를 로딩할 때 가상의 회색 박스들을 먼저 띄운다", type: "UI", icon: "fa-solid fa-table-cells-large", desc: "텍스트와 그림이 채워질 공간에 깜빡이는 임시 뼈대(스케톤 화면)를 띄워, 빈 화면 대비 대기 시간이 짧게 느껴지도록 만드는 시각 장치" },
+    { id: 7, title: "블로그나 메일을 쓰다 나가도 내용이 자동 저장된다", type: "UX", icon: "fa-solid fa-floppy-disk", desc: "인터넷 연결 불안정이나 실수로 화면을 종료했을 때의 작업 손실을 막기 위해 작성 중이던 본문을 알아서 임시 보관해두는 조작 안전장치" },
+    { id: 8, title: "비밀번호 입력 필드 옆에 눈 모양 표시를 둔다", type: "UI", icon: "fa-solid fa-eye-slash", desc: "입력된 비밀번호(●●●●)를 눈 모양 심볼 터치 하나로 텍스트로 보게 하거나 숨기게 전환시켜 조작 실수를 고치게 돕는 인터페이스" },
+    { id: 9, title: "검색창을 터치하면 내 이전 검색어들을 먼저 띄운다", type: "UX", icon: "fa-solid fa-clock-rotate-left", desc: "유저가 텍스트 입력을 시작하기도 전에 최근 찾았던 단어나 실시간 유용한 키워드를 추천하여 타이핑 단계를 최소화해주는 동선 기획" },
+    { id: 10, title: "주변 환경이 어두워지면 밤 배경 화면으로 전환된다", type: "UI", icon: "fa-solid fa-circle-half-stroke", desc: "낮과 밤 환경에 대응해 눈의 피로를 최소화하고 가독성을 보장하기 위해 배경과 명도를 어둡게 설계한 다크 모드 옵션 제공" }
+  ];
+
+  const quizGrid = document.getElementById('quiz-grid');
+  const checkedCountEl = document.getElementById('checked-cards-count');
+  const btnRevealAll = document.getElementById('btn-reveal-all');
+  const btnResetQuiz = document.getElementById('btn-reset-quiz');
+  
+  let checkedCards = new Set();
+
+  // 피셔-예이츠 셔플 알고리즘
+  function shuffle(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  }
+
+  function renderQuiz() {
+    if (!quizGrid) return;
+    
+    // 카드를 랜덤하게 섞은 후 렌더링
+    const shuffledData = shuffle(quizData);
+    
+    quizGrid.innerHTML = shuffledData.map(item => `
+      <div class="quiz-card" data-id="${item.id}" data-type="${item.type}">
+        <div class="quiz-card-inner">
+          <div class="quiz-card-front">
+            <div class="quiz-icon"><i class="${item.icon}"></i></div>
+            <h3>${item.title}</h3>
+            <div class="quiz-click-me">
+              <i class="fa-solid fa-hand-pointer"></i>
+              <span>클릭하여 정답 확인</span>
+            </div>
+          </div>
+          <div class="quiz-card-back type-${item.type.toLowerCase()}">
+            <div class="badge-container">
+              <span class="badge-type">${item.type}</span>
+            </div>
+            <p>${item.desc}</p>
+            <div class="back-footer">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>다시 뒤집기</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // 이벤트 리스너 재부착
+    const cards = quizGrid.querySelectorAll('.quiz-card');
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        const cardId = parseInt(this.getAttribute('data-id'));
+        
+        // 플립 애니메이션 토글
+        this.classList.toggle('flipped');
+        
+        if (this.classList.contains('flipped')) {
+          checkedCards.add(cardId);
+        }
+        
+        updateProgress();
+      });
+    });
+  }
+
+  function updateProgress() {
+    if (checkedCountEl) {
+      checkedCountEl.textContent = checkedCards.size;
+    }
+  }
+
+  // 전체 정답 공개
+  if (btnRevealAll) {
+    btnRevealAll.addEventListener('click', () => {
+      const cards = document.querySelectorAll('.quiz-card');
+      cards.forEach(card => {
+        card.classList.add('flipped');
+        const cardId = parseInt(card.getAttribute('data-id'));
+        checkedCards.add(cardId);
+      });
+      updateProgress();
+    });
+  }
+
+  // 다시 풀기 (초기화 및 재셔플)
+  if (btnResetQuiz) {
+    btnResetQuiz.addEventListener('click', () => {
+      const cards = document.querySelectorAll('.quiz-card');
+      cards.forEach(card => card.classList.remove('flipped'));
+      checkedCards.clear();
+      updateProgress();
+      
+      // 약간의 딜레이를 주어 뒤집힌 후 부드럽게 다시 셔플되게 처리
+      setTimeout(() => {
+        renderQuiz();
+      }, 300);
+    });
+  }
+
+  // 초기 실행
+  renderQuiz();
+
 });
