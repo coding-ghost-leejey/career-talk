@@ -2097,41 +2097,43 @@
    6. Design Thinking & Double Diamond Styling
    ========================================== */
 .double-diamond-wrapper {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   align-items: center;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
 
   .diamond-visual-area {
     background: $bg-card;
     border: 1px solid $border-color;
     border-radius: $border-radius-md;
-    padding: 30px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 440px;
+    width: 100%;
+    height: 250px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px $shadow-color;
 
     .diamond-graphics-container {
       display: flex;
-      gap: 0;
+      gap: 15px;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .diamond-block {
-      width: 140px;
-      height: 140px;
+      width: 110px;
+      height: 110px;
       position: relative;
       border: 2px dashed rgba(255, 255, 255, 0.15);
       transform: rotate(45deg);
-      margin: 15px;
+      margin: 10px;
       transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
       @include flex-center;
 
@@ -2142,17 +2144,17 @@
         @include flex-center;
         flex-direction: column;
         text-align: center;
-        padding: 10px;
+        padding: 5px;
 
         .diamond-label {
-          font-size: rem(13);
+          font-size: rem(12);
           font-weight: 700;
           color: $text-secondary;
-          line-height: 1.4;
+          line-height: 1.3;
           transition: color 0.3s;
 
           span {
-            font-size: rem(11);
+            font-size: rem(10);
             color: $text-muted;
             font-weight: 500;
           }
@@ -2170,7 +2172,7 @@
 
         .line-element {
           position: absolute;
-          font-size: rem(11);
+          font-size: rem(10);
           font-weight: 800;
           color: rgba(255, 255, 255, 0.25);
           text-transform: uppercase;
@@ -2178,13 +2180,13 @@
           letter-spacing: 0.5px;
 
           &.line-diverge {
-            left: -32px;
+            left: -28px;
             top: 50%;
             transform: translateY(-50%);
           }
 
           &.line-converge {
-            right: -32px;
+            right: -28px;
             top: 50%;
             transform: translateY(-50%);
           }
@@ -2201,7 +2203,7 @@
         &.active {
           border-style: solid;
           border-color: $primary-color;
-          box-shadow: 0 0 30px rgba($primary-color, 0.15);
+          box-shadow: 0 0 25px rgba($primary-color, 0.2);
           background: rgba($primary-color, 0.02);
 
           .diamond-inner .diamond-label {
@@ -2215,7 +2217,7 @@
         &.active {
           border-style: solid;
           border-color: #2196f3;
-          box-shadow: 0 0 30px rgba(#2196f3, 0.15);
+          box-shadow: 0 0 25px rgba(#2196f3, 0.2);
           background: rgba(#2196f3, 0.02);
 
           .diamond-inner .diamond-label {
@@ -2228,14 +2230,14 @@
     .diamond-steps-indicator {
       display: flex;
       gap: 12px;
-      margin-top: 35px;
+      margin-top: 20px;
       z-index: 10;
 
       .step-dot {
-        font-size: rem(13);
+        font-size: rem(12);
         font-weight: 700;
         color: $text-muted;
-        padding: 5px 12px;
+        padding: 4px 12px;
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.05);
@@ -2253,17 +2255,22 @@
   }
 
   .diamond-cards-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
 
     .diamond-card {
       background: $bg-card;
       border: 1px solid $border-color;
       border-radius: $border-radius-md;
-      padding: 16px 20px;
+      padding: 18px 16px;
       cursor: pointer;
-      transition: all $transition-fast;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      opacity: 0.45;
+      box-shadow: 0 4px 12px $shadow-color;
+      display: flex;
+      flex-direction: column;
 
       .card-phase-badge {
         font-size: rem(11);
@@ -2271,30 +2278,34 @@
         padding: 3px 8px;
         border-radius: 4px;
         display: inline-block;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         letter-spacing: 0.5px;
+        align-self: flex-start;
       }
 
       h3 {
-        font-size: rem(18);
+        font-size: rem(16.5);
         font-weight: 700;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         color: $text-primary;
       }
 
       p {
-        font-size: rem(15);
+        font-size: rem(14);
         color: $text-secondary;
         line-height: 1.5;
+        margin-bottom: 12px;
+        flex-grow: 1;
       }
 
       .phase-keywords {
         display: flex;
-        gap: 10px;
-        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: auto;
 
         span {
-          font-size: rem(12);
+          font-size: rem(11.5);
           color: $text-muted;
           font-weight: 500;
         }
@@ -2302,20 +2313,24 @@
 
       &:hover {
         border-color: rgba(255, 255, 255, 0.15);
-        transform: translateX(4px);
+        transform: translateY(-4px);
+        opacity: 0.8;
       }
 
       &.active {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        transform: translateX(8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        transform: translateY(-6px);
+        opacity: 1;
 
         &[data-phase="discover"] {
           border-color: $primary-color;
-          background: rgba($primary-color, 0.04);
+          background: rgba($primary-color, 0.03);
+          box-shadow: 0 10px 25px rgba($primary-color, 0.1);
         }
         &[data-phase="define"] {
           border-color: #e91e63;
-          background: rgba(#e91e63, 0.04);
+          background: rgba(#e91e63, 0.03);
+          box-shadow: 0 10px 25px rgba(#e91e63, 0.1);
 
           .card-phase-badge {
             background: rgba(#e91e63, 0.15);
@@ -2324,11 +2339,13 @@
         }
         &[data-phase="develop"] {
           border-color: #2196f3;
-          background: rgba(#2196f3, 0.04);
+          background: rgba(#2196f3, 0.03);
+          box-shadow: 0 10px 25px rgba(#2196f3, 0.1);
         }
         &[data-phase="deliver"] {
           border-color: #00e676;
-          background: rgba(#00e676, 0.04);
+          background: rgba(#00e676, 0.03);
+          box-shadow: 0 10px 25px rgba(#00e676, 0.1);
 
           .card-phase-badge {
             background: rgba(#00e676, 0.15);
@@ -3168,6 +3185,291 @@ body.dark-mode {
     }
   }
 }
+
+/* ==========================================
+   4-6. Design Thinking 5 Stages Styling (slide-9)
+   ========================================== */
+.design-thinking-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+
+  .stages-flow-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    padding: 15px 0;
+    position: relative;
+
+    .stage-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      flex: 1;
+
+      .node-circle {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: $bg-card;
+        border: 2px solid $border-color;
+        @include flex-center;
+        color: $text-secondary;
+        font-size: rem(18);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 4px 10px $shadow-color;
+      }
+
+      .node-label {
+        font-size: rem(12.5);
+        font-weight: 700;
+        color: $text-secondary;
+        text-align: center;
+        margin-top: 10px;
+        line-height: 1.3;
+        transition: all 0.3s;
+
+        span {
+          font-size: rem(10);
+          color: $text-muted;
+          font-weight: 500;
+        }
+      }
+
+      &:hover {
+        .node-circle {
+          border-color: $primary-color;
+          color: $primary-color;
+          transform: translateY(-3px);
+          box-shadow: 0 6px 15px rgba($primary-color, 0.15);
+        }
+        .node-label {
+          color: $text-primary;
+        }
+      }
+
+      &.active {
+        .node-circle {
+          background: $primary-color;
+          border-color: $primary-color;
+          color: #ffffff;
+          transform: scale(1.08) translateY(-2px);
+          box-shadow: 0 6px 20px rgba($primary-color, 0.3);
+        }
+        .node-label {
+          color: $primary-color;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .flow-arrow {
+      color: $text-muted;
+      font-size: rem(12);
+      padding: 0 4px;
+      display: flex;
+      align-items: center;
+      height: 58px;
+      align-self: flex-start;
+      justify-content: center;
+      opacity: 0.5;
+    }
+  }
+
+  .stages-cards-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    min-height: 190px;
+    margin-top: 10px;
+
+    .stage-desc-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: $bg-card;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-md;
+      padding: 24px 30px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 10px 25px $shadow-color;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        border-color: rgba($primary-color, 0.25);
+        box-shadow: 0 10px 25px rgba($primary-color, 0.05);
+
+        body.dark-mode & {
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        }
+      }
+
+      .card-stage-badge {
+        font-size: rem(11);
+        font-weight: 800;
+        color: $primary-color;
+        background: rgba($primary-color, 0.12);
+        padding: 4px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        align-self: flex-start;
+      }
+
+      h3 {
+        font-size: rem(18);
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: $text-primary;
+      }
+
+      p {
+        font-size: rem(14.5);
+        color: $text-secondary;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .stage-actions {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        span {
+          font-size: rem(13.5);
+          color: $text-secondary;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          i {
+            color: $primary-color;
+            font-size: rem(12);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================
+   4-7. Senior Portfolios Card Grid Styling (slide-14)
+   ========================================== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: 30px;
+
+  .portfolio-card {
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px $shadow-color;
+    position: relative;
+    overflow: hidden;
+
+    .card-folder-decor {
+      margin-bottom: 16px;
+      transition: transform 0.3s ease;
+
+      .folder-icon {
+        font-size: rem(42);
+        color: $text-muted;
+        transition: all 0.3s ease;
+      }
+    }
+
+    h3 {
+      font-size: rem(17.5);
+      font-weight: 800;
+      color: $text-primary;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: rem(13.5);
+      color: $text-secondary;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      min-height: 60px;
+    }
+
+    .portfolio-link-btn {
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 25px;
+      background: rgba($primary-color, 0.08);
+      border: 1px solid rgba($primary-color, 0.2);
+      color: $primary-color;
+      font-size: rem(13.5);
+      font-weight: 700;
+      transition: all 0.3s ease;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+    }
+
+    &:hover {
+      border-color: $primary-color;
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+
+      body.dark-mode & {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      .card-folder-decor {
+        transform: scale(1.08);
+        .folder-icon {
+          color: $primary-color;
+        }
+      }
+
+      .portfolio-link-btn {
+        background: $primary-color;
+        color: #ffffff;
+        border-color: $primary-color;
+        box-shadow: 0 4px 12px rgba(217, 35, 46, 0.3);
+      }
+    }
+  }
+}
+
+
 
 
 

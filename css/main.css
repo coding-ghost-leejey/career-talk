@@ -197,7 +197,6 @@ p.section-subtitle {
   font-size: 1.375rem;
   color: var(--text-secondary);
   margin-bottom: 3rem;
-  max-width: 800px;
 }
 
 /* Fade-in transition on scroll */
@@ -2211,40 +2210,42 @@ body.dark-mode .theme-toggle-btn .icon-dark {
    6. Design Thinking & Double Diamond Styling
    ========================================== */
 .double-diamond-wrapper {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   align-items: center;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .double-diamond-wrapper .diamond-visual-area {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 30px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 440px;
+  width: 100%;
+  height: 250px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px var(--shadow-color);
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-graphics-container {
   display: flex;
-  gap: 0;
+  gap: 15px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block {
-  width: 140px;
-  height: 140px;
+  width: 110px;
+  height: 110px;
   position: relative;
   border: 2px dashed rgba(255, 255, 255, 0.15);
   transform: rotate(45deg);
-  margin: 15px;
+  margin: 10px;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   justify-content: center;
@@ -2259,17 +2260,17 @@ body.dark-mode .theme-toggle-btn .icon-dark {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block .diamond-inner .diamond-label {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.3;
   transition: color 0.3s;
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block .diamond-inner .diamond-label span {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -2284,7 +2285,7 @@ body.dark-mode .theme-toggle-btn .icon-dark {
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block .diamond-lines .line-element {
   position: absolute;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.25);
   text-transform: uppercase;
@@ -2292,12 +2293,12 @@ body.dark-mode .theme-toggle-btn .icon-dark {
   letter-spacing: 0.5px;
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block .diamond-lines .line-element.line-diverge {
-  left: -32px;
+  left: -28px;
   top: 50%;
   transform: translateY(-50%);
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block .diamond-lines .line-element.line-converge {
-  right: -32px;
+  right: -28px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -2311,7 +2312,7 @@ body.dark-mode .theme-toggle-btn .icon-dark {
 .double-diamond-wrapper .diamond-visual-area .diamond-block.shape-left.active {
   border-style: solid;
   border-color: #D9232E;
-  box-shadow: 0 0 30px rgba(217, 35, 46, 0.15);
+  box-shadow: 0 0 25px rgba(217, 35, 46, 0.2);
   background: rgba(217, 35, 46, 0.02);
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block.shape-left.active .diamond-inner .diamond-label {
@@ -2323,7 +2324,7 @@ body.dark-mode .theme-toggle-btn .icon-dark {
 .double-diamond-wrapper .diamond-visual-area .diamond-block.shape-right.active {
   border-style: solid;
   border-color: #2196f3;
-  box-shadow: 0 0 30px rgba(33, 150, 243, 0.15);
+  box-shadow: 0 0 25px rgba(33, 150, 243, 0.2);
   background: rgba(33, 150, 243, 0.02);
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-block.shape-right.active .diamond-inner .diamond-label {
@@ -2332,14 +2333,14 @@ body.dark-mode .theme-toggle-btn .icon-dark {
 .double-diamond-wrapper .diamond-visual-area .diamond-steps-indicator {
   display: flex;
   gap: 12px;
-  margin-top: 35px;
+  margin-top: 20px;
   z-index: 10;
 }
 .double-diamond-wrapper .diamond-visual-area .diamond-steps-indicator .step-dot {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-muted);
-  padding: 5px 12px;
+  padding: 4px 12px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -2353,17 +2354,22 @@ body.dark-mode .theme-toggle-btn .icon-dark {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .double-diamond-wrapper .diamond-cards-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 16px 20px;
+  padding: 18px 16px;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0.45;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card .card-phase-badge {
   font-size: 0.6875rem;
@@ -2371,45 +2377,53 @@ body.dark-mode .theme-toggle-btn .icon-dark {
   padding: 3px 8px;
   border-radius: 4px;
   display: inline-block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   letter-spacing: 0.5px;
+  align-self: flex-start;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card h3 {
-  font-size: 1.125rem;
+  font-size: 1.03125rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: var(--text-primary);
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card p {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.5;
+  margin-bottom: 12px;
+  flex-grow: 1;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card .phase-keywords {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card .phase-keywords span {
-  font-size: 0.75rem;
+  font-size: 0.71875rem;
   color: var(--text-muted);
   font-weight: 500;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card:hover {
   border-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(4px);
+  transform: translateY(-4px);
+  opacity: 0.8;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transform: translateX(8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  opacity: 1;
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active[data-phase=discover] {
   border-color: #D9232E;
-  background: rgba(217, 35, 46, 0.04);
+  background: rgba(217, 35, 46, 0.03);
+  box-shadow: 0 10px 25px rgba(217, 35, 46, 0.1);
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active[data-phase=define] {
   border-color: #e91e63;
-  background: rgba(233, 30, 99, 0.04);
+  background: rgba(233, 30, 99, 0.03);
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.1);
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active[data-phase=define] .card-phase-badge {
   background: rgba(233, 30, 99, 0.15);
@@ -2417,11 +2431,13 @@ body.dark-mode .theme-toggle-btn .icon-dark {
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active[data-phase=develop] {
   border-color: #2196f3;
-  background: rgba(33, 150, 243, 0.04);
+  background: rgba(33, 150, 243, 0.03);
+  box-shadow: 0 10px 25px rgba(33, 150, 243, 0.1);
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active[data-phase=deliver] {
   border-color: #00e676;
-  background: rgba(0, 230, 118, 0.04);
+  background: rgba(0, 230, 118, 0.03);
+  box-shadow: 0 10px 25px rgba(0, 230, 118, 0.1);
 }
 .double-diamond-wrapper .diamond-cards-list .diamond-card.active[data-phase=deliver] .card-phase-badge {
   background: rgba(0, 230, 118, 0.15);
@@ -3179,6 +3195,258 @@ body.dark-mode .level-test-btn-wrapper .level-test-btn:hover {
 .level-test-btn-wrapper .level-test-btn .btn-content .arrow-icon {
   font-size: 0.8125rem;
   transition: transform 0.3s ease;
+}
+
+/* ==========================================
+   4-6. Design Thinking 5 Stages Styling (slide-9)
+   ========================================== */
+.design-thinking-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.design-thinking-wrapper .stages-flow-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  padding: 15px 0;
+  position: relative;
+}
+.design-thinking-wrapper .stages-flow-container .stage-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  flex: 1;
+}
+.design-thinking-wrapper .stages-flow-container .stage-node .node-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+.design-thinking-wrapper .stages-flow-container .stage-node .node-label {
+  font-size: 0.78125rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.3;
+  transition: all 0.3s;
+}
+.design-thinking-wrapper .stages-flow-container .stage-node .node-label span {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.design-thinking-wrapper .stages-flow-container .stage-node:hover .node-circle {
+  border-color: #D9232E;
+  color: #D9232E;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(217, 35, 46, 0.15);
+}
+.design-thinking-wrapper .stages-flow-container .stage-node:hover .node-label {
+  color: var(--text-primary);
+}
+.design-thinking-wrapper .stages-flow-container .stage-node.active .node-circle {
+  background: #D9232E;
+  border-color: #D9232E;
+  color: #ffffff;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 35, 46, 0.3);
+}
+.design-thinking-wrapper .stages-flow-container .stage-node.active .node-label {
+  color: #D9232E;
+  font-weight: 800;
+}
+.design-thinking-wrapper .stages-flow-container .flow-arrow {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  height: 58px;
+  align-self: flex-start;
+  justify-content: center;
+  opacity: 0.5;
+}
+.design-thinking-wrapper .stages-cards-container {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  min-height: 190px;
+  margin-top: 10px;
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px 30px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 25px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  border-color: rgba(217, 35, 46, 0.25);
+  box-shadow: 0 10px 25px rgba(217, 35, 46, 0.05);
+}
+body.dark-mode .design-thinking-wrapper .stages-cards-container .stage-desc-card.active {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card .card-stage-badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: #D9232E;
+  background: rgba(217, 35, 46, 0.12);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card p {
+  font-size: 0.90625rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card .stage-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card .stage-actions span {
+  font-size: 0.84375rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.design-thinking-wrapper .stages-cards-container .stage-desc-card .stage-actions span i {
+  color: #D9232E;
+  font-size: 0.75rem;
+}
+
+/* ==========================================
+   4-7. Senior Portfolios Card Grid Styling (slide-14)
+   ========================================== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: 30px;
+}
+.portfolio-grid .portfolio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-grid .portfolio-card .card-folder-decor {
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+.portfolio-grid .portfolio-card .card-folder-decor .folder-icon {
+  font-size: 2.625rem;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+.portfolio-grid .portfolio-card h3 {
+  font-size: 1.09375rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.portfolio-grid .portfolio-card p {
+  font-size: 0.84375rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  min-height: 60px;
+}
+.portfolio-grid .portfolio-card .portfolio-link-btn {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 25px;
+  background: rgba(217, 35, 46, 0.08);
+  border: 1px solid rgba(217, 35, 46, 0.2);
+  color: #D9232E;
+  font-size: 0.84375rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.portfolio-grid .portfolio-card .portfolio-link-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.portfolio-grid .portfolio-card:hover {
+  border-color: #D9232E;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+body.dark-mode .portfolio-grid .portfolio-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+.portfolio-grid .portfolio-card:hover .card-folder-decor {
+  transform: scale(1.08);
+}
+.portfolio-grid .portfolio-card:hover .card-folder-decor .folder-icon {
+  color: #D9232E;
+}
+.portfolio-grid .portfolio-card:hover .portfolio-link-btn {
+  background: #D9232E;
+  color: #ffffff;
+  border-color: #D9232E;
+  box-shadow: 0 4px 12px rgba(217, 35, 46, 0.3);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -295,58 +295,101 @@ document.addEventListener('DOMContentLoaded', () => {
   const diamondRight = document.querySelector('.diamond-block.shape-right');
   const stepDots = document.querySelectorAll('.step-dot');
 
+  function activatePhase(phase) {
+    // Toggle cards active state
+    diamondCards.forEach(c => {
+      if (c.getAttribute('data-phase') === phase) {
+        c.classList.add('active');
+      } else {
+        c.classList.remove('active');
+      }
+    });
+
+    // Toggle step dots active state
+    stepDots.forEach(dot => {
+      if (dot.getAttribute('data-phase') === phase) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    // Toggle Diamond blocks active highlighting
+    if (phase === 'discover' || phase === 'define') {
+      if (diamondLeft) diamondLeft.classList.add('active');
+      if (diamondRight) diamondRight.classList.remove('active');
+      
+      if (diamondLeft) {
+        const lines = diamondLeft.querySelectorAll('.line-element');
+        lines.forEach(l => {
+          if (l.classList.contains(`line-${phase === 'discover' ? 'diverge' : 'converge'}`)) {
+            l.classList.add('active');
+          } else {
+            l.classList.remove('active');
+          }
+        });
+      }
+    } else {
+      if (diamondLeft) diamondLeft.classList.remove('active');
+      if (diamondRight) diamondRight.classList.add('active');
+
+      if (diamondRight) {
+        const lines = diamondRight.querySelectorAll('.line-element');
+        lines.forEach(l => {
+          if (l.classList.contains(`line-${phase === 'develop' ? 'diverge' : 'converge'}`)) {
+            l.classList.add('active');
+          } else {
+            l.classList.remove('active');
+          }
+        });
+      }
+    }
+  }
+
+  // Cards click event
   if (diamondCards) {
     diamondCards.forEach(card => {
       card.addEventListener('click', function() {
         const phase = this.getAttribute('data-phase');
+        activatePhase(phase);
+      });
+    });
+  }
 
-        // Toggle cards
-        diamondCards.forEach(c => c.classList.remove('active'));
+  // Step dots click event
+  if (stepDots) {
+    stepDots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const phase = this.getAttribute('data-phase');
+        activatePhase(phase);
+      });
+    });
+  }
+
+
+  /* ==========================================
+     4-2b. Design Thinking 5 Stages Interaction (Slide 9)
+     ========================================== */
+  const stageNodes = document.querySelectorAll('.stage-node');
+  const stageDescCards = document.querySelectorAll('.stage-desc-card');
+
+  if (stageNodes && stageDescCards) {
+    stageNodes.forEach(node => {
+      node.addEventListener('click', function() {
+        const stageIdx = this.getAttribute('data-stage');
+
+        // Toggle nodes active
+        stageNodes.forEach(n => n.classList.remove('active'));
         this.classList.add('active');
 
-        // Toggle step dots
-        if (stepDots) {
-          stepDots.forEach(dot => {
-            if (dot.getAttribute('data-phase') === phase) {
-              dot.classList.add('active');
-            } else {
-              dot.classList.remove('active');
-            }
-          });
-        }
-
-        // Toggle Diamond blocks active highlighting
-        if (phase === 'discover' || phase === 'define') {
-          if (diamondLeft) diamondLeft.classList.add('active');
-          if (diamondRight) diamondRight.classList.remove('active');
-          
-          // Toggle lines
-          if (diamondLeft) {
-            const lines = diamondLeft.querySelectorAll('.line-element');
-            lines.forEach(l => {
-              if (l.classList.contains(`line-${phase === 'discover' ? 'diverge' : 'converge'}`)) {
-                l.classList.add('active');
-              } else {
-                l.classList.remove('active');
-              }
-            });
+        // Toggle cards active
+        stageDescCards.forEach(c => {
+          if (c.getAttribute('data-stage') === stageIdx) {
+            c.classList.add('active');
+          } else {
+            c.classList.remove('active');
           }
-        } else {
-          if (diamondLeft) diamondLeft.classList.remove('active');
-          if (diamondRight) diamondRight.classList.add('active');
-
-          // Toggle lines
-          if (diamondRight) {
-            const lines = diamondRight.querySelectorAll('.line-element');
-            lines.forEach(l => {
-              if (l.classList.contains(`line-${phase === 'develop' ? 'diverge' : 'converge'}`)) {
-                l.classList.add('active');
-              } else {
-                l.classList.remove('active');
-              }
-            });
-          }
-        }
+        });
       });
     });
   }
