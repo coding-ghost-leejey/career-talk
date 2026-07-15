@@ -35,18 +35,19 @@
     <div class="nav-dot" data-slide="3"><span class="nav-tooltip">3. 다양한 디바이스</span></div>
     <div class="nav-dot" data-slide="4"><span class="nav-tooltip">4. UI vs UX 차이점</span></div>
     <div class="nav-dot" data-slide="5"><span class="nav-tooltip">5. UI vs UX 카드 퀴즈</span></div>
-    <div class="nav-dot" data-slide="6"><span class="nav-tooltip">6. UI 고려사항</span></div>
-    <div class="nav-dot" data-slide="7"><span class="nav-tooltip">7. UX 5단계</span></div>
-    <div class="nav-dot" data-slide="8"><span class="nav-tooltip">8. 디자인씽킹 단계</span></div>
-    <div class="nav-dot" data-slide="9"><span class="nav-tooltip">9. 문제해결 모델</span></div>
-    <div class="nav-dot" data-slide="10"><span class="nav-tooltip">10. 서비스 탄생 단계</span></div>
-    <div class="nav-dot" data-slide="11"><span class="nav-tooltip">11. UXUI vs PD</span></div>
-    <div class="nav-dot" data-slide="12"><span class="nav-tooltip">12. 필요한 역량</span></div>
-    <div class="nav-dot" data-slide="13"><span class="nav-tooltip">13. 전공과 준비</span></div>
-    <div class="nav-dot" data-slide="14"><span class="nav-tooltip">14. 선배들의 포트폴리오</span></div>
-    <div class="nav-dot" data-slide="15"><span class="nav-tooltip">15. 연봉과 현실</span></div>
-    <div class="nav-dot" data-slide="16"><span class="nav-tooltip">16. 질의응답 Q&A</span></div>
-    <div class="nav-dot" data-slide="17"><span class="nav-tooltip">17. 맺음말</span></div>
+    <div class="nav-dot" data-slide="6"><span class="nav-tooltip">6. UI/UX 용어 도감</span></div>
+    <div class="nav-dot" data-slide="7"><span class="nav-tooltip">7. UI 고려사항</span></div>
+    <div class="nav-dot" data-slide="8"><span class="nav-tooltip">8. UX 5단계</span></div>
+    <div class="nav-dot" data-slide="9"><span class="nav-tooltip">9. 디자인씽킹 단계</span></div>
+    <div class="nav-dot" data-slide="10"><span class="nav-tooltip">10. 문제해결 모델</span></div>
+    <div class="nav-dot" data-slide="11"><span class="nav-tooltip">11. 서비스 탄생 단계</span></div>
+    <div class="nav-dot" data-slide="12"><span class="nav-tooltip">12. UXUI vs PD</span></div>
+    <div class="nav-dot" data-slide="13"><span class="nav-tooltip">13. 필요한 역량</span></div>
+    <div class="nav-dot" data-slide="14"><span class="nav-tooltip">14. 전공과 준비</span></div>
+    <div class="nav-dot" data-slide="15"><span class="nav-tooltip">15. 선배들의 포트폴리오</span></div>
+    <div class="nav-dot" data-slide="16"><span class="nav-tooltip">16. 연봉과 현실</span></div>
+    <div class="nav-dot" data-slide="17"><span class="nav-tooltip">17. 질의응답 Q&A</span></div>
+    <div class="nav-dot" data-slide="18"><span class="nav-tooltip">18. 맺음말</span></div>
   </nav>
 
   <!-- Main Presentation Container -->
@@ -402,8 +403,44 @@
       </div>
     </section>
 
-    <!-- 6. UI Core Principles Slide -->
+    <!-- 6. UI/UX Glossary Slide -->
     <section class="slide" id="slide-6">
+      <div class="slide-content">
+        <h1 class="section-title">UI/UX <span>용어 도감</span></h1>
+        <p class="section-subtitle">현업에서 자주 사용하는 42가지 UI/UX 핵심 단어 모음입니다. 용어를 클릭해 실제 작동 예시를 확인해 보세요!</p>
+
+        <div class="glossary-wrapper animate-on-scroll">
+          <!-- 카테고리 필터 탭 -->
+          <div class="glossary-filter-tabs">
+            <button class="filter-tab-btn active" data-category="all">전체</button>
+            <button class="filter-tab-btn" data-category="structure">기본/구조</button>
+            <button class="filter-tab-btn" data-category="component">컴포넌트</button>
+            <button class="filter-tab-btn" data-category="pattern">패턴/경험</button>
+          </div>
+
+          <div class="glossary-container">
+            <!-- 좌측: 용어 리스트 영역 -->
+            <div class="glossary-sidebar">
+              <div class="glossary-list" id="glossary-list">
+                <!-- JS로 42가지 용어가 렌더링됩니다. -->
+              </div>
+            </div>
+
+            <!-- 우측: 용어 상세 설명 및 인터랙티브 프리뷰 데모 -->
+            <div class="glossary-detail-panel" id="glossary-detail-panel">
+              <div class="empty-detail-state">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>용어를 선택해 주세요</h3>
+                <p>좌측 용어 목록에서 단어를 클릭하면 상세 설명과 조작 가능한 예시 데모가 여기에 나타납니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. UI Core Principles Slide -->
+    <section class="slide" id="slide-7">
       <div class="slide-content">
         <h1 class="section-title">UI 디자인의 <span>4가지 핵심 고려사항</span></h1>
         <p class="section-subtitle">단순히 아름다운 화면을 넘어, 사용자가 직관적으로 이해할 수 있는 시각 규칙을 설계해야 합니다. 각 카드를 클릭해보세요.</p>
@@ -512,8 +549,8 @@
       </div>
     </section>
 
-    <!-- 7. UX 5 Elements (Jesse James Garrett) Slide -->
-    <section class="slide" id="slide-7">
+    <!-- 8. UX 5 Elements (Jesse James Garrett) Slide -->
+    <section class="slide" id="slide-8">
       <div class="slide-content">
         <h1 class="section-title">사용자 경험의 5단계, <span>UX 5 Elements</span></h1>
         <p class="section-subtitle">추상적인 사용자의 생각(Strategy)이 눈에 보이는 비주얼(Surface)로 구체화되는 5가지 레이어 스택입니다. 각 단계를 클릭해보세요.</p>
@@ -597,8 +634,8 @@
               <p class="detail-description">유저가 원하는 정보를 빠르고 정확하게 찾을 수 있도록 메뉴의 계층을 조직화(Information Architecture)하고, 유저가
                 기능 간에 어떻게 "이동(How)"하는지 경로를 매핑합니다.</p>
               <div class="detail-grid">
-                <div class="detai    <!-- 8. Design Thinking 5 Stages Slide -->
-    <section class="slide" id="slide-8">
+                <div class="detai    <!-- 9. Design Thinking 5 Stages Slide -->
+    <section class="slide" id="slide-9">
       <div class="slide-content">
         <h1 class="section-title">사용자 중심의 문제 해결, <span>디자인씽킹 5단계</span></h1>
         <p class="section-subtitle">인간에 집중하여 혁신적인 비즈니스 솔루션을 도출해내는 Stanford d.school의 5가지 핵심 단계입니다. 각 단계를 클릭해보세요.</p>
@@ -707,8 +744,8 @@
       </div>
     </section>
 
-    <!-- 9. Double Diamond Slide -->
-    <section class="slide" id="slide-9">
+    <!-- 10. Double Diamond Slide -->
+    <section class="slide" id="slide-10">
       <div class="slide-content">
         <h1 class="section-title">디자이너의 생각법, <span>더블 다이아몬드</span></h1>
         <p class="section-subtitle">문제를 올바르게 정의하고 창의적으로 해결하기 위한 디자인씽킹의 핵심 방법론입니다. 각 단계를 클릭해보세요.</p>
@@ -802,8 +839,8 @@
 
 
 
-    <!-- 10. Service process Slide -->
-    <section class="slide" id="slide-10">
+    <!-- 11. Service process Slide -->
+    <section class="slide" id="slide-11">
       <div class="slide-content">
         <h1 class="section-title">서비스 하나가 <span>탄생하기까지</span></h1>
         <p class="section-subtitle">기획부터 배포까지 제품이 탄생하는 순서입니다. 각 단계를 클릭하여 무엇을 하는지 알아보세요.</p>
@@ -826,8 +863,8 @@
       </div>
     </section>
 
-    <!-- 11. UXUI vs Product Designer Slide -->
-    <section class="slide" id="slide-11">
+    <!-- 12. UXUI vs Product Designer Slide -->
+    <section class="slide" id="slide-12">
       <div class="slide-content">
         <h1 class="section-title">UXUI 디자이너 vs <span>프로덕트 디자이너</span></h1>
         <p class="section-subtitle">현업에서 자주 혼용되지만, 핵심 목표와 초점이 서로 다른 두 디자이너 직무를 한눈에 비교해보세요.</p>
@@ -881,8 +918,8 @@
       </div>
     </section>
 
-    <!-- 12. Tools vs Soft Skills Slide -->
-    <section class="slide" id="slide-12">
+    <!-- 13. Tools vs Soft Skills Slide -->
+    <section class="slide" id="slide-13">
       <div class="slide-content">
         <h1 class="section-title">그럼 어떤 <span>능력이 필요할까?</span></h1>
         <p class="section-subtitle">디자이너가 다루는 하드 스킬(도구)과 오랫동안 살아남기 위해 필수적인 소프트 스킬입니다.</p>
@@ -961,8 +998,8 @@
       </div>
     </section>
 
-    <!-- 13. Majors and Preparation Slide -->
-    <section class="slide" id="slide-13">
+    <!-- 14. Majors and Preparation Slide -->
+    <section class="slide" id="slide-14">
       <div class="slide-content">
         <h1 class="section-title">전공과 진로 <span>준비하기</span></h1>
         <p class="section-subtitle">시각디자인과 1학년 학생으로서 지금부터 어떤 방향으로 마인드셋을 가질 수 있을까요?</p>
@@ -1007,8 +1044,8 @@
       </div>
     </section>
 
-    <!-- 14. Senior Portfolios Slide -->
-    <section class="slide" id="slide-14">
+    <!-- 15. Senior Portfolios Slide -->
+    <section class="slide" id="slide-15">
       <div class="slide-content">
         <h1 class="section-title">합격을 부르는 <span>선배들의 포트폴리오</span></h1>
         <p class="section-subtitle">대학 시절부터 정립한 문제 해결 과정과 UI/UX 설계 노하우가 고스란히 담긴 선배들의 실제 포트폴리오 자료입니다. (구글 드라이브 링크)</p>
@@ -1095,8 +1132,8 @@
       </div>
     </section>
 
-    <!-- 15. Salary and Careers Slide -->
-    <section class="slide" id="slide-15">
+    <!-- 16. Salary and Careers Slide -->
+    <section class="slide" id="slide-16">
       <div class="slide-content">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
           <div>
@@ -1147,8 +1184,8 @@
       </div>
     </section>
 
-    <!-- 16. Q&A Slide -->
-    <section class="slide" id="slide-16">
+    <!-- 17. Q&A Slide -->
+    <section class="slide" id="slide-17">
       <div class="slide-content">
         <div
           style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; margin-bottom: 20px;">
@@ -1207,8 +1244,8 @@
       </div>
     </section>
 
-    <!-- 17. Closing Message & Thank you Slide Combined -->
-    <section class="slide" id="slide-17">
+    <!-- 18. Closing Message & Thank you Slide Combined -->
+    <section class="slide" id="slide-18">
       <div class="slide-content">
         <div class="footer-wrapper animate-on-scroll">
           <div class="typing-text" id="typewriter"></div>

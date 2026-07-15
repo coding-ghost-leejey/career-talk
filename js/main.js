@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
           el.classList.add('visible');
         });
 
-        // Trigger typewriter on slide 13
-        if (index === 13) {
+        // Trigger typewriter on slide 14
+        if (index === 14) {
           startTypewriter();
         }
       }
@@ -801,5 +801,751 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 초기 실행
   renderQuiz();
+
+
+  /* ==========================================
+     13. UI/UX Glossary (6. Glossary Slide)
+     ========================================== */
+  const glossaryData = [
+    {
+      id: 1,
+      name: "컴포넌트 / 에셋",
+      eng: "Component / Asset",
+      category: "structure",
+      desc: "UI를 구성하는 재사용 가능한 독립적인 디자인 요소들(버튼, 입력 필드, 아이콘 등)과 이에 사용되는 이미지, 폰트 등의 모든 리소스를 의미합니다.",
+      demoHTML: `<div class="demo-empty-view-box"><i class="fa-solid fa-cubes" style="font-size:3rem;color:#6c5ce7;"></i><h5>Component Set</h5><p>공통 규칙으로 만들어진 디자인 부품 그룹</p></div>`
+    },
+    {
+      id: 2,
+      name: "그리드",
+      eng: "Grid System",
+      category: "structure",
+      desc: "화면의 레이아웃을 체계적이고 질서 있게 배치하기 위해 세로 열(Column)과 가로 행(Row), 그리고 간격(Gutter)으로 화면을 분할하는 격자 가이드 시스템입니다.",
+      demoHTML: `<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:220px;height:90px;">
+        <div style="background:rgba(108,92,231,0.2);border:1px dashed #6c5ce7;border-radius:4px;"></div>
+        <div style="background:rgba(108,92,231,0.2);border:1px dashed #6c5ce7;border-radius:4px;"></div>
+        <div style="background:rgba(108,92,231,0.2);border:1px dashed #6c5ce7;border-radius:4px;"></div>
+        <div style="background:rgba(108,92,231,0.2);border:1px dashed #6c5ce7;border-radius:4px;"></div>
+      </div>`
+    },
+    {
+      id: 3,
+      name: "헤더",
+      eng: "Header",
+      category: "structure",
+      desc: "웹/앱 페이지 최상단에 위치하며 서비스의 로고, 검색창, 프로필, 주요 글로벌 메뉴 등을 담는 공통 영역입니다.",
+      demoHTML: `<div style="width:100%;max-width:240px;padding:8px 12px;background:rgba(9,132,227,0.2);border:1px solid #0984e3;border-radius:6px;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;">
+        <span style="font-weight:bold;font-size:0.75rem;color:#0984e3;">LOGO</span>
+        <div style="display:flex;gap:10px;"><span style="font-size:0.65rem;color:#aaa;">메뉴1</span><span style="font-size:0.65rem;color:#aaa;">메뉴2</span></div>
+      </div>`
+    },
+    {
+      id: 4,
+      name: "푸터",
+      eng: "Footer",
+      category: "structure",
+      desc: "웹/앱 페이지 최하단에 위치하며 저작권 정보(Copyright), 사업자 정보, 사이트맵, 고객센터 번호 등을 제공하는 공통 영역입니다.",
+      demoHTML: `<div style="width:100%;max-width:240px;padding:10px;background:rgba(225,112,85,0.12);border:1px solid #e17055;border-radius:6px;text-align:center;font-size:0.65rem;color:#999;box-sizing:border-box;">
+        <p style="margin:0 0 2px 0;">© 2026 Blackcrown Inc.</p>
+        <p style="margin:0;font-size:0.55rem;color:#777;">이용약관 | 개인정보처리방침</p>
+      </div>`
+    },
+    {
+      id: 5,
+      name: "네비게이션",
+      eng: "Navigation",
+      category: "structure",
+      desc: "사용자가 원하는 정보나 페이지로 막힘없이 쉽게 이동할 수 있도록 안내해주는 메뉴, 링크, 버튼들의 체계적인 안내 시스템입니다.",
+      demoHTML: `<div class="demo-breadcrumb-box">
+        <span class="bc-item">홈</span><span class="bc-sep">></span>
+        <span class="bc-item">카테고리</span><span class="bc-sep">></span>
+        <span class="bc-item active">세부제품</span>
+      </div>`
+    },
+    {
+      id: 6,
+      name: "GNB, LNB, SNB, FNB",
+      eng: "Global / Local / Side / Footer Navigation",
+      category: "structure",
+      desc: "GNB는 최상단 전체 서비스 공통 메뉴, LNB는 카테고리 내부 하위 분류 메뉴, SNB는 측면 사이드바 메뉴, FNB는 하단 정보 메뉴를 뜻합니다.",
+      demoHTML: `<div class="demo-layout-box">
+        <div class="gnb-area">GNB</div>
+        <div class="body-container">
+          <div class="snb-area">SNB</div>
+          <div class="main-content-area">
+            <div class="lnb-area">LNB</div>
+            <div class="content-fill">콘텐츠 영역</div>
+          </div>
+        </div>
+        <div class="fnb-area">FNB</div>
+      </div>`
+    },
+    {
+      id: 7,
+      name: "탭바",
+      eng: "Tab Bar",
+      category: "component",
+      desc: "모바일 앱 화면 최하단에 아이콘과 글자로 표시되어, 주요 최상위 메뉴 간의 탭 전환을 터치 한 번으로 돕는 모바일 전용 네비게이션입니다.",
+      demoHTML: `<div style="display:flex;width:100%;max-width:240px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;justify-content:space-around;padding:6px 0;">
+        <div style="text-align:center;color:#6c5ce7;font-size:0.65rem;cursor:pointer;"><i class="fa-solid fa-house" style="font-size:1rem;display:block;margin-bottom:2px;"></i>홈</div>
+        <div style="text-align:center;color:#888;font-size:0.65rem;cursor:pointer;"><i class="fa-solid fa-magnifying-glass" style="font-size:1rem;display:block;margin-bottom:2px;"></i>검색</div>
+        <div style="text-align:center;color:#888;font-size:0.65rem;cursor:pointer;"><i class="fa-solid fa-user" style="font-size:1rem;display:block;margin-bottom:2px;"></i>MY</div>
+      </div>`
+    },
+    {
+      id: 8,
+      name: "탭메뉴",
+      eng: "Tab Menu",
+      category: "component",
+      desc: "콘텐츠를 대주제별로 묶어 상단에 나란히 늘어놓고, 클릭한 탭의 하위 내용만 실시간으로 아래 영역에 변경 노출해주는 시각 탭입니다.",
+      demoHTML: `<div style="display:flex;border-bottom:2px solid rgba(255,255,255,0.1);width:100%;max-width:220px;box-sizing:border-box;">
+        <div style="padding:6px 10px;color:#a29bfe;border-bottom:2px solid #6c5ce7;font-weight:bold;font-size:0.8rem;cursor:pointer;">상세설명</div>
+        <div style="padding:6px 10px;color:#888;font-size:0.8rem;cursor:pointer;">구매평 (18)</div>
+      </div>`
+    },
+    {
+      id: 9,
+      name: "체크박스 / 라디오 버튼",
+      eng: "Checkbox / Radio Button",
+      category: "component",
+      desc: "체크박스는 다중 선택(여러 개 동시 선택) 시 사용하고, 라디오 버튼은 여러 선택지 중 오직 '하나만' 고를 수 있는 원형 버튼입니다.",
+      demoHTML: `<div class="demo-checkbox-radio-box">
+        <label class="demo-input-row"><input type="checkbox" checked> 필수 동의 (체크박스)</label>
+        <label class="demo-input-row"><input type="radio" name="demo-r" checked> 남성 (라디오)</label>
+        <label class="demo-input-row"><input type="radio" name="demo-r"> 여성 (라디오)</label>
+      </div>`
+    },
+    {
+      id: 10,
+      name: "토글 버튼",
+      eng: "Toggle Button / Switch",
+      category: "component",
+      desc: "전등 스위치와 같이, 특정 설정 상태를 활성화(ON) 또는 비활성화(OFF)로 부드러운 애니메이션과 함께 즉각 변경시키는 스위치입니다.",
+      demoHTML: `<div class="demo-toggle-wrapper">
+        <div class="demo-toggle-btn-box" id="demo-toggle-switch"><div class="toggle-knob"></div></div>
+        <span style="font-size:0.8rem;color:#aaa;" id="demo-toggle-status">서비스 사용 안 함</span>
+      </div>`
+    },
+    {
+      id: 11,
+      name: "드롭다운/셀렉트박스",
+      eng: "Dropdown / Select Box",
+      category: "component",
+      desc: "클릭 시 하위 선택사항들이 목록 상자 모양으로 아래로 내려앉으며 보여져, 그 중 하나의 옵션을 골라 세팅하게 만드는 컨트롤러입니다.",
+      demoHTML: `<div class="demo-select-box">
+        <span>사이즈 선택</span>
+        <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:#888;"></i>
+      </div>`
+    },
+    {
+      id: 12,
+      name: "아코디언",
+      eng: "Accordion",
+      category: "component",
+      desc: "클릭 시 악기 아코디언처럼 화면을 수직으로 늘리며 하위 정보(상세 내용)를 슥 펼쳐 보여주는 압축형 UI 구조입니다.",
+      demoHTML: `<div class="demo-accordion-box">
+        <div class="demo-accordion-header" id="demo-accordion-header">
+          <span>아코디언 질문 예시</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="demo-accordion-content" id="demo-accordion-content">
+          이 공간이 본문 영역입니다. 다시 누르면 원래대로 닫히며 화면 효율을 높입니다.
+        </div>
+      </div>`
+    },
+    {
+      id: 13,
+      name: "타임피커/데이트피커",
+      eng: "Time Picker / Date Picker",
+      category: "component",
+      desc: "키보드로 날짜나 시간을 치는 번거로움 대신, 가상 달력 팝업이나 회전식 드럼을 굴려 쉽게 입력시키는 디자인 폼입니다.",
+      demoHTML: `<div style="display:flex;gap:8px;">
+        <input type="date" class="demo-picker-input" value="2026-07-15">
+        <input type="time" class="demo-picker-input" value="12:30">
+      </div>`
+    },
+    {
+      id: 14,
+      name: "브레드크럼",
+      eng: "Breadcrumbs",
+      category: "component",
+      desc: "사용자가 현재 접근 중인 서비스 페이지의 구조 계층(홈 > 의류 > 상의)을 위에서 선형 경로로 표기해주는 내비게이션 도구입니다.",
+      demoHTML: `<div class="demo-breadcrumb-box">
+        <span class="bc-item">의류</span><span class="bc-sep">/</span>
+        <span class="bc-item">아우터</span><span class="bc-sep">/</span>
+        <span class="bc-item active">패딩</span>
+      </div>`
+    },
+    {
+      id: 15,
+      name: "페이징",
+      eng: "Pagination",
+      category: "component",
+      desc: "방대한 글 데이터를 여러 쪽으로 나누어 하단에 [1] [2] [3] 등의 책 페이지 번호 목록 형태로 보여주는 정보 네비게이션입니다.",
+      demoHTML: `<div style="display:flex;gap:4px;align-items:center;">
+        <div style="width:20px;height:20px;border:1px solid rgba(255,255,255,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;cursor:pointer;"><</div>
+        <div style="width:20px;height:20px;background:#6c5ce7;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#fff;font-weight:bold;">1</div>
+        <div style="width:20px;height:20px;border:1px solid rgba(255,255,255,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;cursor:pointer;">2</div>
+        <div style="width:20px;height:20px;border:1px solid rgba(255,255,255,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;cursor:pointer;">></div>
+      </div>`
+    },
+    {
+      id: 16,
+      name: "슬라이더, 레인지 슬라이더",
+      eng: "Slider / Range Slider",
+      category: "component",
+      desc: "바 위에 배치된 조절 장치를 끌어당겨 화면 밝기나 볼륨 크기 등을 수치 범위로 직관적으로 제어하는 요소입니다.",
+      demoHTML: `<div style="width:100%;max-width:200px;display:flex;flex-direction:column;gap:6px;">
+        <div style="position:relative;width:100%;height:4px;background:rgba(255,255,255,0.1);border-radius:3px;">
+          <div style="position:absolute;left:0;width:70%;height:100%;background:#6c5ce7;border-radius:3px;"></div>
+          <div style="position:absolute;left:70%;top:-4px;width:12px;height:12px;background:#fff;border-radius:50%;cursor:pointer;transform:translateX(-50%);box-shadow:0 1px 3px rgba(0,0,0,0.3);"></div>
+        </div>
+        <span style="font-size:0.7rem;color:#999;text-align:right;">밝기 조절: 70%</span>
+      </div>`
+    },
+    {
+      id: 17,
+      name: "캐러셀",
+      eng: "Carousel",
+      category: "component",
+      desc: "슬라이드 트랙에 묶여 있는 여러 배너 이미지들을 좌우 터치를 통해 회전식 슬라이드로 순차 탐색시키는 영역입니다.",
+      demoHTML: `<div class="demo-carousel-box">
+        <div class="carousel-arrow" id="demo-carousel-left"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="carousel-screen">
+          <div class="carousel-track" id="demo-carousel-track">
+            <div class="carousel-slide slide-a">BANNER 1</div>
+            <div class="carousel-slide slide-b">BANNER 2</div>
+            <div class="carousel-slide slide-c">BANNER 3</div>
+          </div>
+        </div>
+        <div class="carousel-arrow" id="demo-carousel-right"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>`
+    },
+    {
+      id: 18,
+      name: "스와이프",
+      eng: "Swipe Gesture",
+      category: "pattern",
+      desc: "화면 영역 위에 손가락을 얹어 한 방향으로 쓸어 넘기는 행동으로 다음 페이지 진입이나 메뉴 노출을 발동시키는 경험 제스처입니다.",
+      demoHTML: `<div style="width:150px;height:60px;background:rgba(255,255,255,0.02);border:1px dashed rgba(255,255,255,0.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#888;">
+        <i class="fa-solid fa-angles-left" style="margin-right:6px;animation:bounceHorizontal 0.8s infinite alternate;"></i> 밀어서 밀착 메뉴
+      </div>`
+    },
+    {
+      id: 19,
+      name: "프로그레스바",
+      eng: "Progress Bar",
+      category: "component",
+      desc: "다운로드 상태나 진척 사항의 전체 볼륨 중 현재 진행량을 막대 바의 수평 게이지 채움으로 직관화해 표시하는 컨트롤입니다.",
+      demoHTML: `<div class="demo-progress-wrapper">
+        <div class="progress-bg"><div class="progress-fill" id="demo-progress-bar"></div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:0.7rem;color:#999;" id="demo-progress-txt">대기 중...</span>
+          <button style="padding:3px 8px;background:#6c5ce7;color:#fff;border:none;border-radius:4px;font-size:0.7rem;cursor:pointer;" id="demo-progress-btn">진행하기</button>
+        </div>
+      </div>`
+    },
+    {
+      id: 20,
+      name: "툴팁",
+      eng: "Tooltip",
+      category: "component",
+      desc: "마우스 커서를 특정 기호 위에 올려두면, 말풍선 형태로 작은 지시 문답이나 상세 주석 텍스트를 잠시 노출해 돕는 컴포넌트입니다.",
+      demoHTML: `<div class="demo-tooltip-wrapper">
+        <button class="tooltip-trigger-btn">팁 확인</button>
+        <div class="tooltip-content-box">마우스 호버 시 툴팁이 활성화됩니다</div>
+      </div>`
+    },
+    {
+      id: 21,
+      name: "팝업 / 모달",
+      eng: "Pop-up / Modal",
+      category: "component",
+      desc: "현재 정보 페이지 위에 임시로 겹쳐 띄우는 새로운 확인 정보창입니다. 모달은 뒤 배경을 제어 불가 상태로 막는 속성이 강합니다.",
+      demoHTML: `<div class="demo-modal-trigger" id="demo-modal-btn">가상 모달 띄우기</div>`
+    },
+    {
+      id: 22,
+      name: "딤",
+      eng: "Dim / Dimmed Screen",
+      category: "pattern",
+      desc: "모달이나 메인 알림창이 화면에 노출될 때, 배경 화면 전체를 어두운 반투명 색상으로 가려 가독성과 주목도를 올리는 연출 효과입니다.",
+      demoHTML: `<div style="position:relative;width:100%;max-width:220px;height:100px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:url('images/irangi_smile.svg') center/cover;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);backdrop-filter:blur(1px);"></div>
+        <span style="position:relative;color:#fff;font-size:0.75rem;font-weight:bold;">딤(Dim) 아웃 배경</span>
+      </div>`
+    },
+    {
+      id: 23,
+      name: "토스트팝업 / 스낵바",
+      eng: "Toast Pop-up / Snack Bar",
+      category: "component",
+      desc: "토스터기에서 식빵이 구워져 슥 솟구쳐 오르듯, 하단에서 가볍게 나타났다 사용자 확인 조작 없이 사라지는 비강제형 메시지 뷰입니다.",
+      demoHTML: `<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+        <button style="padding:6px 12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#fff;border-radius:4px;font-size:0.75rem;cursor:pointer;" id="demo-toast-btn">토스트 실행</button>
+        <div style="padding:6px 12px;background:#1e1e24;border:1px solid #00cec9;color:#00cec9;border-radius:4px;font-size:0.7rem;opacity:0;transform:translateY(8px);transition:all 0.25s ease;" id="demo-toast-popup">메시지 전달 완료!</div>
+      </div>`
+    },
+    {
+      id: 24,
+      name: "바텀시트",
+      eng: "Bottom Sheet",
+      category: "component",
+      desc: "모바일 인터페이스 전용 요소로, 화면 맨 하단 영역에서 수직 슬라이드로 올라와 상세 옵션이나 행동 리스트를 제공하는 시트입니다.",
+      demoHTML: `<div class="demo-bottom-sheet-container">
+        <button class="sheet-btn" id="demo-sheet-trigger">시트 올리기</button>
+        <div class="sheet-overlay" id="demo-sheet-panel">
+          <div class="sheet-handle"></div>
+          <div class="sheet-items">
+            <div class="sheet-item" onclick="alert('복사됨')">텍스트 복사하기</div>
+            <div class="sheet-item" onclick="alert('종료됨')">메뉴 종료</div>
+          </div>
+        </div>
+      </div>`
+    },
+    {
+      id: 25,
+      name: "다양한 메뉴 아이콘들",
+      eng: "Menu Icons",
+      category: "component",
+      desc: "버튼의 텍스트가 없더라도 기능적 의미를 시각 기호로 즉시 인지하도록 매칭해 둔 유용한 픽토그램/아이콘 소스들입니다.",
+      demoHTML: `<div style="display:flex;gap:12px;font-size:1.1rem;color:#a29bfe;">
+        <i class="fa-solid fa-house" title="홈"></i>
+        <i class="fa-solid fa-magnifying-glass" title="검색"></i>
+        <i class="fa-solid fa-gear" title="설정"></i>
+        <i class="fa-solid fa-trash" title="삭제"></i>
+      </div>`
+    },
+    {
+      id: 26,
+      name: "엠프티 화면",
+      eng: "Empty State Screen",
+      category: "pattern",
+      desc: "조회 내역 데이터나 저장된 장바구니 리스트가 공백 상태일 때, 당황하지 않게 유용한 아이콘과 안내 텍스트로 보완한 빈 화면 레이아웃입니다.",
+      demoHTML: `<div class="demo-empty-view-box">
+        <i class="fa-solid fa-circle-exclamation" style="font-size:2rem;"></i>
+        <h5>내역이 없습니다</h5>
+        <p>새로운 소식이 전송되면 알려드려요</p>
+      </div>`
+    },
+    {
+      id: 27,
+      name: "코치마크",
+      eng: "Coach Mark",
+      category: "pattern",
+      desc: "첫 진입 유저 대상 튜토리얼 설계로, 조작 버튼 위에 반투명 형광펜 형태로 가이드를 얹어 핵심 조작을 짚어 설명하는 오버레이입니다.",
+      demoHTML: `<div style="position:relative;width:100%;max-width:200px;height:100px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:rgba(255,255,255,0.01);overflow:hidden;padding:10px;box-sizing:border-box;">
+        <div style="width:16px;height:16px;background:#6c5ce7;border-radius:50%;border:2px solid #fff;box-shadow:0 0 8px #6c5ce7;"></div>
+        <div style="position:absolute;top:28px;left:10px;background:#6c5ce7;color:#fff;padding:3px 6px;border-radius:4px;font-size:0.6rem;white-space:nowrap;">[탭] 메뉴를 여세요!</div>
+      </div>`
+    },
+    {
+      id: 28,
+      name: "시스템 컬러",
+      eng: "System Colors",
+      category: "pattern",
+      desc: "제품 내부에서 정보적 피드백을 색상으로 전달하기 위한 공통 약속입니다. 성공은 초록, 경고는 노랑, 위험/에러는 빨강을 적용합니다.",
+      demoHTML: `<div style="display:flex;gap:8px;">
+        <span style="width:20px;height:20px;background:#00b894;border-radius:50%;display:inline-block;" title="정상 완료"></span>
+        <span style="width:20px;height:20px;background:#d63031;border-radius:50%;display:inline-block;" title="오류 경고"></span>
+        <span style="width:20px;height:20px;background:#fdcb6e;border-radius:50%;display:inline-block;" title="시스템 보류"></span>
+      </div>`
+    },
+    {
+      id: 29,
+      name: "브레이크 포인트",
+      eng: "Break Point",
+      category: "structure",
+      desc: "반응형 웹 코딩 시 뷰포트의 넓이가 변함에 따라 모바일, 테블릿, PC 가로 레이아웃이 분기되는 고정 수치 해상도 한계선을 지칭합니다.",
+      demoHTML: `<div style="font-size:0.7rem;color:#aaa;text-align:center;">
+        <div>미디어 쿼리(Media Query) 레이아웃 전환</div>
+        <div style="margin-top:6px;font-weight:bold;color:#6c5ce7;">768px / 1024px</div>
+      </div>`
+    },
+    {
+      id: 30,
+      name: "로더 / 스피너",
+      eng: "Loader / Spinner",
+      category: "component",
+      desc: "네트워크 통신 중 페이지 응답을 대기하고 있음을 원형 고리 그래픽의 회전 운동 등으로 표현해 알려주는 로딩 지시자입니다.",
+      demoHTML: `<div class="demo-loader-box">
+        <div class="loader-circle"></div>
+      </div>`
+    },
+    {
+      id: 31,
+      name: "테이블",
+      eng: "Table",
+      category: "structure",
+      desc: "세로 열과 가로 행의 정밀 격자 구조를 차용해 방대한 정보나 데이터 리스트를 구조화해 열람하도록 돕는 정형 표 폼입니다.",
+      demoHTML: `<table style="width:100%;max-width:200px;border-collapse:collapse;font-size:0.65rem;border:1px solid rgba(255,255,255,0.08);">
+        <tr style="background:rgba(255,255,255,0.04);font-weight:bold;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <th style="padding:3px;">옵션</th><th style="padding:3px;">상태</th>
+        </tr>
+        <tr>
+          <td style="padding:3px;color:#aaa;">무선연결</td><td style="padding:3px;color:#00cec9;">지원</td>
+        </tr>
+      </table>`
+    },
+    {
+      id: 32,
+      name: "카드 디자인",
+      eng: "Card Design",
+      category: "pattern",
+      desc: "특정 개별 콘텐츠의 이미지, 텍스트, 상태 정보를 네모난 카드 한 판넬의 프레임 안에 패키지화해 시각적 안정감을 주는 구조 패턴입니다.",
+      demoHTML: `<div style="width:130px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden;">
+        <div style="height:55px;background:linear-gradient(135deg,#6c5ce7,#a29bfe);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:0.75rem;">Card View</div>
+        <div style="padding:6px;font-size:0.65rem;color:#fff;">타이틀 영역</div>
+      </div>`
+    },
+    {
+      id: 33,
+      name: "텍스트 필드/텍스트 박스",
+      eng: "Text Field / Text Box",
+      category: "component",
+      desc: "아이디, 검색어 등의 문자열 데이터 값을 사용자가 키패드로 쳐서 직접 시스템에 입력하도록 자리를 만들어 둔 박스 영역입니다.",
+      demoHTML: `<div style="width:100%;max-width:180px;display:flex;flex-direction:column;gap:4px;">
+        <span style="font-size:0.7rem;color:#999;">아이디</span>
+        <input type="text" placeholder="아이디를 입력하세요" style="width:100%;padding:6px 10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:4px;font-size:0.75rem;color:#fff;" readonly>`
+    },
+    {
+      id: 34,
+      name: "검색필드",
+      eng: "Search Field",
+      category: "component",
+      desc: "텍스트 박스 안에 검색을 직관화하는 돋보기 아이콘을 고정 연동하여 정보의 검색 실행을 유도하는 전문 입력 창입니다.",
+      demoHTML: `<div style="position:relative;width:100%;max-width:180px;">
+        <input type="text" placeholder="통합 검색" style="width:100%;padding:6px 25px 6px 10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:20px;font-size:0.75rem;color:#fff;box-sizing:border-box;" readonly>
+        <i class="fa-solid fa-magnifying-glass" style="position:absolute;right:10px;top:7px;font-size:0.75rem;color:#888;"></i>
+      </div>`
+    },
+    {
+      id: 35,
+      name: "플레이스홀더",
+      eng: "Placeholder",
+      category: "component",
+      desc: "입력창이 비어있을 때 어떤 텍스트를 기입해야 하는지 힌트나 입력 길잡이 문구를 박스 안에 흐리게 노출해두는 디자인 규칙입니다.",
+      demoHTML: `<input type="text" placeholder="입력 전 미리 띄워진 문답" style="width:100%;max-width:180px;padding:6px 10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:4px;font-size:0.75rem;color:#555;" readonly>`
+    },
+    {
+      id: 36,
+      name: "플로팅 버튼",
+      eng: "Floating Action Button (FAB)",
+      category: "component",
+      desc: "화면 페이지 스크롤과 상관없이 화면 모서리 위 지정된 위치에 둥둥 떠서 핵심 기능 실행을 신속히 돕는 모바일 최적화 버튼입니다.",
+      demoHTML: `<div style="position:relative;width:100%;max-width:180px;height:100px;border:1px dashed rgba(255,255,255,0.12);border-radius:6px;background:rgba(255,255,255,0.01);">
+        <div style="position:absolute;bottom:8px;right:8px;width:30px;height:30px;background:#6c5ce7;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.95rem;box-shadow:0 3px 8px rgba(108,92,231,0.3);"><i class="fa-solid fa-plus"></i></div>
+      </div>`
+    },
+    {
+      id: 37,
+      name: "CTA",
+      eng: "Call To Action Button",
+      category: "pattern",
+      desc: "화면에서 기업과 사용자가 만나는 가장 주된 핵심 단계를 클릭하도록 강하게 눈길을 이끄는 최대 강조 스타일링 버튼입니다.",
+      demoHTML: `<div class="demo-cta-box">
+        <button class="demo-cta-btn">무료 신청하기</button>
+      </div>`
+    },
+    {
+      id: 38,
+      name: "스플래시",
+      eng: "Splash Screen",
+      category: "pattern",
+      desc: "앱을 클릭하자마자 서비스 구동 전 짧은 초 단위 대기 시간 동안 브랜드 첫인상을 알리기 위해 전체 창에 띄우는 ان트로 뷰입니다.",
+      demoHTML: `<div style="position:relative;width:100%;max-width:160px;height:100px;border:1px solid rgba(255,255,255,0.12);border-radius:6px;background:#121216;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+        <i class="fa-solid fa-bolt" style="font-size:1.3rem;color:#fdcb6e;animation:float 2s ease-in-out infinite;"></i>
+        <span style="font-size:0.55rem;color:#777;font-weight:bold;">LOADING PRESENTATION</span>
+      </div>`
+    },
+    {
+      id: 39,
+      name: "디폴트",
+      eng: "Default Value / State",
+      category: "structure",
+      desc: "유저가 커스터마이징을 하기 전, 시스템이 최적의 상태로 미리 규정해 선택해 둔 초기 고정 값 혹은 기초 활성화 정보값입니다.",
+      demoHTML: `<div style="font-size:0.75rem;color:#888;">
+        기본 언어 설정(Default): <strong style="color:#a29bfe;">한국어 (Korean)</strong>
+      </div>`
+    },
+    {
+      id: 40,
+      name: "스케렐톤",
+      eng: "Skeleton Loading UI",
+      category: "pattern",
+      desc: "로딩 시간 동안 깜빡이는 흰 빈칸 대신, 글과 그림 영역 레이아웃대로 깜빡이는 흑백 뼈대를 띄워 대기 감도를 단축하는 UI입니다.",
+      demoHTML: `<div class="demo-skeleton-card">
+        <div class="ske-circle"></div>
+        <div class="ske-line title"></div>
+        <div class="ske-line desc1"></div>
+      </div>`
+    },
+    {
+      id: 41,
+      name: "온보딩",
+      eng: "Onboarding Experience",
+      category: "pattern",
+      desc: "신규 가입 유저가 제품 사용법과 핵심 강점을 손쉽게 숙지하도록 도와주는 첫 페이지 진입 가이드 투어 단계입니다.",
+      demoHTML: `<div style="position:relative;width:100%;max-width:160px;height:100px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;background:rgba(255,255,255,0.01);display:flex;flex-direction:column;justify-content:space-between;padding:10px;box-sizing:border-box;">
+        <div style="text-align:center;"><i class="fa-solid fa-shield-halved" style="font-size:1.2rem;color:#00cec9;margin-bottom:4px;"></i><h6 style="margin:0;font-size:0.7rem;color:#fff;">보안 연결 완료</h6></div>
+        <div style="display:flex;justify-content:center;gap:3px;"><span style="width:4px;height:4px;background:#444;border-radius:50%;"></span><span style="width:4px;height:4px;background:#00cec9;border-radius:50%;"></span><span style="width:4px;height:4px;background:#444;border-radius:50%;"></span></div>
+      </div>`
+    },
+    {
+      id: 42,
+      name: "뱃지",
+      eng: "Badge",
+      category: "component",
+      desc: "아이콘 구석 등에 부착해 읽지 않은 알람의 개수(숫자 빨간칩)나 신규 등록(N 마크) 등 업데이트 현황을 간편 요약해 알리는 칩입니다.",
+      demoHTML: `<div style="position:relative;display:inline-block;padding:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;">
+        <i class="fa-solid fa-bell" style="font-size:1.2rem;color:#aaa;"></i>
+        <span style="position:absolute;top:-3px;right:-3px;background:#ff7675;color:#fff;font-size:0.55rem;font-weight:bold;padding:1px 4px;border-radius:8px;">NEW</span>
+      </div>`
+    }
+  ];
+
+  const glossaryList = document.getElementById('glossary-list');
+  const glossaryDetail = document.getElementById('glossary-detail-panel');
+  const filterBtns = document.querySelectorAll('.filter-tab-btn');
+
+  function renderGlossaryItems(category = 'all') {
+    if (!glossaryList) return;
+
+    const filtered = glossaryData.filter(item => {
+      if (category === 'all') return true;
+      return item.category === category;
+    });
+
+    glossaryList.innerHTML = filtered.map(item => `
+      <button class="glossary-item-btn" data-id="${item.id}">
+        <span class="glossary-num">${String(item.id).padStart(2, '0')}</span>
+        <span class="glossary-title">${item.name}</span>
+        <i class="fa-solid fa-chevron-right glossary-arrow"></i>
+      </button>
+    `).join('');
+
+    // 리스트 클릭 이벤트 추가
+    const itemBtns = glossaryList.querySelectorAll('.glossary-item-btn');
+    itemBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        itemBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const termId = parseInt(this.getAttribute('data-id'));
+        const term = glossaryData.find(t => t.id === termId);
+        if (term) {
+          showGlossaryDetail(term);
+        }
+      });
+    });
+  }
+
+  function showGlossaryDetail(term) {
+    if (!glossaryDetail) return;
+
+    let categoryKorean = "";
+    if (term.category === "structure") categoryKorean = "기본 / 구조";
+    else if (term.category === "component") categoryKorean = "컴포넌트";
+    else if (term.category === "pattern") categoryKorean = "패턴 / 경험";
+
+    glossaryDetail.innerHTML = `
+      <div class="detail-header">
+        <div class="term-name-group">
+          <h2>${term.name}</h2>
+          <span class="term-eng">${term.eng}</span>
+        </div>
+        <span class="term-category-badge">${categoryKorean}</span>
+      </div>
+      <div class="term-description-box">
+        <h4>개념 설명</h4>
+        <p>${term.desc}</p>
+      </div>
+      <div class="term-demo-section">
+        <span class="demo-label"><i class="fa-solid fa-code"></i> INTERACTIVE PREVIEW DEMO</span>
+        ${term.demoHTML}
+      </div>
+    `;
+
+    // 꽂혀진 HTML 데모 컴포넌트에 마이크로 클릭 리스너 연결
+    bindDemoInteractions(term.id);
+  }
+
+  function bindDemoInteractions(id) {
+    // 10. 토글 버튼 (Toggle Button)
+    if (id === 10) {
+      const toggleSwitch = document.getElementById('demo-toggle-switch');
+      const toggleStatus = document.getElementById('demo-toggle-status');
+      if (toggleSwitch && toggleStatus) {
+        toggleSwitch.addEventListener('click', function() {
+          this.classList.toggle('active');
+          if (this.classList.contains('active')) {
+            toggleStatus.textContent = "서비스 동작 중 (ON)";
+            toggleStatus.style.color = "#00cec9";
+          } else {
+            toggleStatus.textContent = "서비스 사용 안 함 (OFF)";
+            toggleStatus.style.color = "#aaa";
+          }
+        });
+      }
+    }
+
+    // 12. 아코디언 (Accordion)
+    if (id === 12) {
+      const accHeader = document.getElementById('demo-accordion-header');
+      const accContent = document.getElementById('demo-accordion-content');
+      if (accHeader && accContent) {
+        accHeader.addEventListener('click', function() {
+          this.classList.toggle('active');
+          accContent.classList.toggle('active');
+        });
+      }
+    }
+
+    // 17. 캐러셀 (Carousel)
+    if (id === 17) {
+      const track = document.getElementById('demo-carousel-track');
+      const btnLeft = document.getElementById('demo-carousel-left');
+      const btnRight = document.getElementById('demo-carousel-right');
+      
+      if (track && btnLeft && btnRight) {
+        let currentSlideIdx = 0;
+        const totalSlides = 3;
+
+        function updateSlide() {
+          track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
+        }
+
+        btnRight.addEventListener('click', () => {
+          currentSlideIdx = (currentSlideIdx + 1) % totalSlides;
+          updateSlide();
+        });
+
+        btnLeft.addEventListener('click', () => {
+          currentSlideIdx = (currentSlideIdx - 1 + totalSlides) % totalSlides;
+          updateSlide();
+        });
+      }
+    }
+
+    // 19. 프로그레스바 (Progress Bar)
+    if (id === 19) {
+      const progBtn = document.getElementById('demo-progress-btn');
+      const progBar = document.getElementById('demo-progress-bar');
+      const progTxt = document.getElementById('demo-progress-txt');
+
+      if (progBtn && progBar && progTxt) {
+        progBtn.addEventListener('click', () => {
+          progBtn.disabled = true;
+          progBtn.style.opacity = '0.5';
+          progTxt.textContent = "작업 진행 중...";
+          
+          let width = 0;
+          const interval = setInterval(() => {
+            if (width >= 100) {
+              clearInterval(interval);
+              progTxt.textContent = "진행 완료 (100%)";
+              progBtn.disabled = false;
+              progBtn.style.opacity = '1';
+            } else {
+              width += 10;
+              progBar.style.width = `${width}%`;
+            }
+          }, 150);
+        });
+      }
+    }
+
+    // 21. 팝업 / 모달 (Modal / PopUp)
+    if (id === 21) {
+      const modalBtn = document.getElementById('demo-modal-btn');
+      if (modalBtn) {
+        modalBtn.addEventListener('click', () => {
+          // 모달 오버레이 및 창 생성
+          const overlay = document.createElement('div');
+          overlay.className = 'demo-modal-overlay';
+          overlay.id = 'demo-modal-overlay-el';
+          overlay.innerHTML = `
+            <div class="demo-modal-content">
+              <h4>모달 팝업 창</h4>
+              <p>뒤의 화면 영역 조작은 일시적으로 차단되고 이 창이 최우선시됩니다.</p>
+              <button id="demo-modal-close-btn">닫기</button>
+            </div>
+          `;
+          
+          // 패널 안에 삽입
+          const parentSection = modalBtn.closest('.term-demo-section');
+          if (parentSection) {
+            parentSection.appendChild(overlay);
+            
+            const closeBtn = document.getElementById('demo-modal-close-btn');
+            closeBtn.addEventListener('click', () => {
+              overlay.remove();
+            });
+          }
+        });
+      }
+    }
+
+    // 23. 토스트 알림 (Toast Pop-up / Snack Bar)
+    if (id === 23) {
+      const toastBtn = document.getElementById('demo-toast-btn');
+      const toastPopup = document.getElementById('demo-toast-popup');
+      if (toastBtn && toastPopup) {
+        toastBtn.addEventListener('click', () => {
+          toastPopup.style.opacity = '1';
+          toastPopup.style.transform = 'translateY(0)';
+          
+          setTimeout(() => {
+            toastPopup.style.opacity = '0';
+            toastPopup.style.transform = 'translateY(8px)';
+          }, 1500);
+        });
+      }
+    }
+
+    // 24. 바텀 시트 (Bottom Sheet)
+    if (id === 24) {
+      const sheetTrigger = document.getElementById('demo-sheet-trigger');
+      const sheetPanel = document.getElementById('demo-sheet-panel');
+      if (sheetTrigger && sheetPanel) {
+        sheetTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          sheetPanel.classList.add('active');
+        });
+
+        // 닫기 클릭 바인딩
+        document.addEventListener('click', () => {
+          sheetPanel.classList.remove('active');
+        });
+      }
+    }
+  }
+
+  // 필터 버튼 이벤트 연결
+  if (filterBtns) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const category = this.getAttribute('data-category');
+        renderGlossaryItems(category);
+
+        // 상세 설명 리셋
+        if (glossaryDetail) {
+          glossaryDetail.innerHTML = `
+            <div class="empty-detail-state">
+              <i class="fa-solid fa-book-open"></i>
+              <h3>용어를 선택해 주세요</h3>
+              <p>좌측 용어 목록에서 단어를 클릭하면 상세 설명과 조작 가능한 예시 데모가 여기에 나타납니다.</p>
+            </div>
+          `;
+        }
+      });
+    });
+  }
+
+  // 초기 렌더링
+  renderGlossaryItems('all');
 
 });
